@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, LogIn } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -35,9 +35,9 @@ export function Navbar() {
                 key={link.path}
                 to={link.path}
                 className={cn(
-                  "text-sm font-medium transition-colors hover:text-primary",
+                  "text-sm font-medium transition-colors hover:text-accent",
                   location.pathname === link.path
-                    ? "text-primary"
+                    ? "text-accent"
                     : "text-muted-foreground"
                 )}
               >
@@ -46,8 +46,14 @@ export function Navbar() {
             ))}
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden lg:block">
+          {/* CTA Buttons */}
+          <div className="hidden lg:flex items-center gap-3">
+            <a href="https://app.wellbe.bio" target="_blank" rel="noopener noreferrer">
+              <Button variant="outline" className="font-medium px-4">
+                <LogIn className="mr-2 h-4 w-4" />
+                Login
+              </Button>
+            </a>
             <Link to="/contatti">
               <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium px-6">
                 Prenota Demo
@@ -88,6 +94,12 @@ export function Navbar() {
                   {link.name}
                 </Link>
               ))}
+              <a href="https://app.wellbe.bio" target="_blank" rel="noopener noreferrer" onClick={() => setIsOpen(false)}>
+                <Button variant="outline" className="w-full font-medium mb-2">
+                  <LogIn className="mr-2 h-4 w-4" />
+                  Login
+                </Button>
+              </a>
               <Link to="/contatti" onClick={() => setIsOpen(false)}>
                 <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-medium">
                   Prenota Demo
