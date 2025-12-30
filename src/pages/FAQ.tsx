@@ -9,17 +9,17 @@ const faqCategories = [
     { question: "È disponibile una demo gratuita?", answer: "Sì! Puoi prenotare una demo gratuita direttamente dal nostro sito." },
   ]},
   { title: "Moduli & Funzionalità", items: [
-    { question: "Quali moduli sono disponibili?", answer: "Offriamo 4 moduli: Happiness, Sicurezza e Rischio (RTQ), JD-R Healthcare e DEI." },
+    { question: "Quali moduli sono disponibili?", answer: "Offriamo 4 moduli: Happiness, Sicurezza e Rischio (RTQ), JD-R Healthcare e Parità di Genere (DEI)." },
     { question: "Posso attivare solo alcuni moduli?", answer: "Assolutamente sì. La piattaforma è modulare e puoi scegliere solo i moduli di cui hai bisogno." },
-    { question: "Il modulo DEI è conforme alla UNI/PdR 125?", answer: "Sì, il modulo DEI è progettato per supportare il percorso verso la certificazione UNI/PdR 125:2022." },
+    { question: "Il modulo Parità di Genere è conforme alla UNI/PdR 125?", answer: "Sì, il modulo Parità di Genere è progettato per supportare il percorso verso la certificazione UNI/PdR 125:2022." },
   ]},
   { title: "Privacy & Sicurezza", items: [
     { question: "Come vengono protetti i dati?", answer: "Utilizziamo crittografia end-to-end, server sicuri in EU e siamo pienamente conformi al GDPR." },
     { question: "L'anonimato è garantito?", answer: "Sì, le risposte individuali sono sempre anonime. I report mostrano solo dati aggregati." },
   ]},
-  { title: "Pricing & Abbonamenti", items: [
-    { question: "Quali piani sono disponibili?", answer: "Offriamo tre piani: Starter, Business ed Enterprise, con funzionalità crescenti." },
-    { question: "È possibile personalizzare il piano?", answer: "Sì, soprattutto per il piano Enterprise, offriamo soluzioni completamente personalizzate." },
+  { title: "Pricing", items: [
+    { question: "Come funziona il pricing?", answer: "Ogni organizzazione è unica. Costruiamo insieme un piano su misura per i tuoi obiettivi di sostenibilità sociale." },
+    { question: "È possibile personalizzare il piano?", answer: "Sì, offriamo soluzioni completamente personalizzate in base alle tue esigenze e al numero di dipendenti." },
   ]},
   { title: "Implementazione", items: [
     { question: "Quanto tempo richiede l'attivazione?", answer: "In media meno di una settimana, con supporto dedicato del nostro team." },

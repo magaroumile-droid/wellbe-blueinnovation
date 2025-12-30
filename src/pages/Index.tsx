@@ -28,8 +28,8 @@ const modules = [
     color: "pink" as const,
   },
   {
-    title: "DEI",
-    description: "Costruisci un ambiente inclusivo: diversità, equità e parità come pilastri della sostenibilità sociale.",
+    title: "Parità di Genere",
+    description: "Costruisci un ambiente inclusivo e ottieni la certificazione UNI/PdR 125:2022 per la parità di genere.",
     icon: Users,
     color: "green" as const,
     isNew: true,
