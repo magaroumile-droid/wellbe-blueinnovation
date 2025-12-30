@@ -7,6 +7,7 @@ import { TestimonialCard } from "@/components/shared/TestimonialCard";
 import { FAQAccordion, FAQItem } from "@/components/shared/FAQAccordion";
 import { SectionHeader } from "@/components/shared/SectionHeader";
 import { useCountUp } from "@/hooks/useCountUp";
+import { useParallax } from "@/hooks/useParallax";
 import { LogoMarquee } from "@/components/shared/LogoMarquee";
 import platformDashboard from "@/assets/platform-dashboard.png";
 import logoProfiltek from "@/assets/logo-profiltek.png";
@@ -114,15 +115,26 @@ const homepageFAQs: FAQItem[] = [
 
 export default function Index() {
   const { count: companyCount, ref: countRef } = useCountUp(40, 2000);
+  const { ref: parallaxRef, offset } = useParallax(0.3);
 
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative hero-gradient text-primary-foreground overflow-hidden">
-        {/* Background Effects */}
+      <section ref={parallaxRef} className="relative hero-gradient text-primary-foreground overflow-hidden">
+        {/* Parallax Background Effects */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/4 -left-1/4 w-1/2 h-1/2 bg-primary/20 rounded-full blur-3xl animate-pulse-slow" />
-          <div className="absolute bottom-1/4 -right-1/4 w-1/2 h-1/2 bg-accent/20 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: "1s" }} />
+          <div 
+            className="absolute top-1/4 -left-1/4 w-1/2 h-1/2 bg-primary/20 rounded-full blur-3xl animate-pulse-slow transition-transform duration-100"
+            style={{ transform: `translateY(${offset * 0.5}px) translateX(${offset * 0.2}px)` }}
+          />
+          <div 
+            className="absolute bottom-1/4 -right-1/4 w-1/2 h-1/2 bg-accent/20 rounded-full blur-3xl animate-pulse-slow transition-transform duration-100"
+            style={{ transform: `translateY(${offset * 0.3}px) translateX(${-offset * 0.15}px)`, animationDelay: "1s" }}
+          />
+          <div 
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-3xl transition-transform duration-100"
+            style={{ transform: `translate(-50%, -50%) scale(${1 + offset * 0.0005})` }}
+          />
         </div>
 
         <div className="container mx-auto px-4 lg:px-8 py-24 lg:py-32 relative z-10">
