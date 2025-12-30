@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X, LogIn } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import wellbeLogo from "@/assets/wellbe-logo.png";
 
 const navLinks = [
   { name: "Home", path: "/" },
@@ -21,11 +22,8 @@ export function Navbar() {
       <nav className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-xl">W</span>
-            </div>
-            <span className="text-xl font-bold text-foreground">Wellbe</span>
+          <Link to="/" className="flex items-center">
+            <img src={wellbeLogo} alt="Wellbe" className="h-8 lg:h-10" />
           </Link>
 
           {/* Desktop Navigation */}

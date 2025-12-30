@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Linkedin, Twitter, Mail } from "lucide-react";
+import wellbeLogo from "@/assets/wellbe-logo.png";
 
 const footerLinks = {
   piattaforma: [
@@ -27,11 +28,8 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <Link to="/" className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-xl">W</span>
-              </div>
-              <span className="text-xl font-bold">Wellbe</span>
+            <Link to="/" className="flex items-center mb-4">
+              <img src={wellbeLogo} alt="Wellbe" className="h-10 brightness-0 invert" />
             </Link>
             <p className="text-background/70 text-sm leading-relaxed max-w-sm mb-6">
               L'unica piattaforma per la Sostenibilità Sociale d'Impresa. 
