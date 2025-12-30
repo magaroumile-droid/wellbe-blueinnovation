@@ -19,11 +19,11 @@ export default function Pricing() {
           {/* Hero Title */}
           <div className="max-w-4xl mx-auto text-center mb-16 lg:mb-24">
             <h1 className="text-4xl lg:text-6xl font-bold text-foreground mb-6">
-              No, non ti diciamo qui il prezzo.
+              Il prezzo? Dipende da te.
             </h1>
             <p className="text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto">
-              Non perché vogliamo tenere segreti, ma perché ogni azienda ha esigenze 
-              diverse e il prezzo deve riflettere esattamente quello di cui hai bisogno.
+              Ogni organizzazione è unica. Per questo costruiamo insieme un piano 
+              su misura per i tuoi obiettivi di sostenibilità sociale.
             </p>
           </div>
 
@@ -34,11 +34,11 @@ export default function Pricing() {
                 {/* Left Column */}
                 <div>
                   <h2 className="text-2xl lg:text-4xl font-bold text-foreground mb-6">
-                    Rientri nell'investimento in &lt;90 giorni
+                    Investimento, non costo
                   </h2>
                   <p className="text-muted-foreground leading-relaxed mb-8">
-                    In Wellbe non vendiamo funzionalità ma risultati: raccontaci 
-                    cosa vuoi raggiungere e mettici alla prova.
+                    Misuriamo il successo in impatto reale sulle persone. 
+                    Parlaci dei tuoi obiettivi e ti mostreremo il valore concreto.
                   </p>
                   <Link to="/contatti">
                     <Button size="lg" className="font-semibold px-8">
