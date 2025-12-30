@@ -1,4 +1,4 @@
-import { ArrowRight, Sparkles, Shield, Heart, Users } from "lucide-react";
+import { ArrowRight, Sparkles, Shield, Heart, Users, Building2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Layout } from "@/components/layout/Layout";
@@ -6,10 +6,14 @@ import { ModuleCard } from "@/components/shared/ModuleCard";
 import { TestimonialCard } from "@/components/shared/TestimonialCard";
 import { FAQAccordion, FAQItem } from "@/components/shared/FAQAccordion";
 import { SectionHeader } from "@/components/shared/SectionHeader";
+import { useCountUp } from "@/hooks/useCountUp";
 import platformDashboard from "@/assets/platform-dashboard.png";
 import logoProfiltek from "@/assets/logo-profiltek.png";
-import logoWish from "@/assets/logo-wish.webp";
-import logoArtigiani from "@/assets/logo-artigiani.webp";
+import logoWish from "@/assets/logo-wish.png";
+import logoArtigiani from "@/assets/logo-artigiani.png";
+import logoBeautyprof from "@/assets/logo-beautyprof.png";
+import logoMsc from "@/assets/logo-msc.png";
+import logoCadis from "@/assets/logo-cadis.png";
 
 const modules = [
   {
@@ -108,6 +112,8 @@ const homepageFAQs: FAQItem[] = [
 ];
 
 export default function Index() {
+  const { count: companyCount, ref: countRef } = useCountUp(40, 2000);
+
   return (
     <Layout>
       {/* Hero Section */}
@@ -143,22 +149,20 @@ export default function Index() {
               </Link>
             </div>
             
-            {/* Trust Badge */}
-            <div className="mt-10 animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
-              <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20">
-                <div className="flex -space-x-2">
-                  {[...Array(4)].map((_, i) => (
-                    <div 
-                      key={i} 
-                      className="w-8 h-8 rounded-full bg-gradient-to-br from-accent to-primary border-2 border-primary-foreground/20 flex items-center justify-center text-xs font-bold text-primary-foreground"
-                    >
-                      {['P', 'W', 'A', '+'][i]}
-                    </div>
-                  ))}
+            {/* Animated Counter Badge */}
+            <div ref={countRef} className="mt-10 animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
+              <div className="inline-flex items-center gap-4 px-8 py-4 rounded-2xl bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20">
+                <div className="flex items-center justify-center w-14 h-14 rounded-xl bg-primary-foreground/20">
+                  <Building2 className="w-7 h-7 text-primary-foreground" />
                 </div>
-                <span className="text-primary-foreground/90 font-medium">
-                  <span className="text-primary-foreground font-bold">+40 aziende</span> hanno già scelto Wellbe
-                </span>
+                <div className="text-left">
+                  <div className="text-3xl font-bold text-primary-foreground">
+                    +{companyCount}
+                  </div>
+                  <div className="text-sm text-primary-foreground/80">
+                    aziende hanno già scelto Wellbe
+                  </div>
+                </div>
               </div>
             </div>
           </div>
