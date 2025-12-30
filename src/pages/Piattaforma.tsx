@@ -16,8 +16,8 @@ const modules = [
     subtitle: "Benessere e Clima Organizzativo",
     icon: Sparkles,
     image: moduleHappiness,
-    description: "Basato su strumenti validati di psicologia del lavoro, il modulo Happiness misura il benessere percepito e il clima organizzativo della tua azienda.",
-    features: ["Assessment basato su modelli scientifici", "Misurazione engagement e soddisfazione", "Report dettagliati per area/team", "Benchmark di settore", "Suggerimenti actionable"],
+    description: "Basato su strumenti validati di psicologia del lavoro, il modulo Happiness misura il benessere percepito e il clima organizzativo della tua azienda tramite l'indicatore BWI (Business Wellbeing Index).",
+    features: ["Indicatore BWI proprietario", "Certificazione e badge digitale BWI", "Assessment basato su modelli scientifici", "Report dettagliati per area/team", "Benchmark di settore"],
   },
   {
     id: "sicurezza",
@@ -25,7 +25,7 @@ const modules = [
     subtitle: "Percezione della Sicurezza",
     icon: Shield,
     image: moduleSafety,
-    description: "Analizza la percezione della sicurezza sul lavoro e la propensione al rischio dei dipendenti per rafforzare la cultura della prevenzione.",
+    description: "Analizza la percezione della sicurezza sul lavoro per rafforzare la cultura della prevenzione.",
     features: ["Valutazione percezione rischi", "Analisi comportamenti sicuri", "Cultura della prevenzione", "Conformità normativa", "Piani di miglioramento"],
   },
   {
