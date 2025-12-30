@@ -16,7 +16,7 @@ const modules = [
     subtitle: "Benessere e Clima Organizzativo",
     icon: Sparkles,
     image: moduleHappiness,
-    description: "Basato su strumenti validati di psicologia del lavoro, il modulo Happiness misura il benessere percepito e il clima organizzativo della tua azienda tramite l'indicatore BWI (Business Wellbeing Index).",
+    description: "Basato su strumenti validati di psicologia del lavoro, il modulo Happiness misura il benessere percepito e il clima organizzativo della tua azienda tramite l'indicatore BWI (Blue Wellbeing Index).",
     features: ["Indicatore BWI proprietario", "Certificazione e badge digitale BWI", "Assessment basato su modelli scientifici", "Report dettagliati per area/team", "Benchmark di settore"],
   },
   {
