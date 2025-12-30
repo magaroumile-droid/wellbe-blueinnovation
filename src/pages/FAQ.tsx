@@ -9,7 +9,7 @@ const faqCategories = [
     { question: "È disponibile una demo gratuita?", answer: "Sì! Puoi prenotare una demo gratuita direttamente dal nostro sito." },
   ]},
   { title: "Moduli & Funzionalità", items: [
-    { question: "Quali moduli sono disponibili?", answer: "Offriamo 4 moduli: Happiness, Sicurezza e Rischio (RTQ), JD-R Healthcare e Parità di Genere (DEI)." },
+    { question: "Quali moduli sono disponibili?", answer: "Offriamo 4 moduli: Happiness, Sicurezza e Rischio, JD-R Healthcare e Parità di Genere (DEI)." },
     { question: "Posso attivare solo alcuni moduli?", answer: "Assolutamente sì. La piattaforma è modulare e puoi scegliere solo i moduli di cui hai bisogno." },
     { question: "Il modulo Parità di Genere è conforme alla UNI/PdR 125?", answer: "Sì, il modulo Parità di Genere è progettato per supportare il percorso verso la certificazione UNI/PdR 125:2022." },
   ]},

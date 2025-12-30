@@ -21,7 +21,7 @@ const modules = [
   },
   {
     id: "sicurezza",
-    title: "RTQ - Sicurezza e Rischio",
+    title: "Sicurezza e Rischio",
     subtitle: "Percezione della Sicurezza",
     icon: Shield,
     image: moduleSafety,
