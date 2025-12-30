@@ -7,6 +7,9 @@ import { TestimonialCard } from "@/components/shared/TestimonialCard";
 import { FAQAccordion, FAQItem } from "@/components/shared/FAQAccordion";
 import { SectionHeader } from "@/components/shared/SectionHeader";
 import platformDashboard from "@/assets/platform-dashboard.png";
+import logoProfiltek from "@/assets/logo-profiltek.png";
+import logoWish from "@/assets/logo-wish.webp";
+import logoArtigiani from "@/assets/logo-artigiani.webp";
 
 const modules = [
   {
@@ -56,25 +59,28 @@ const benefits = [
 
 const testimonials = [
   {
-    quote: "Grazie a Wellbe abbiamo integrato la sostenibilità sociale nel nostro piano strategico. Un cambio di paradigma per l'intera organizzazione.",
-    author: "Marco Rossi",
-    role: "HR Director",
-    company: "TechCorp Italia",
-    metric: { value: "+43%", label: "Engagement" },
-  },
-  {
-    quote: "I dati di Wellbe alimentano direttamente il nostro bilancio di sostenibilità. Finalmente metriche sociali concrete e affidabili.",
-    author: "Laura Bianchi",
+    quote: "Wellbe ci ha dato un'istantanea accurata del nostro benessere complessivo, permettendoci di affrontare rapidamente i punti critici. Con questi insight abbiamo lanciato una call di open innovation con l'Università della Calabria.",
+    author: "Giovanni",
     role: "CEO",
-    company: "Innovate Srl",
-    metric: { value: "-30%", label: "Turnover" },
+    company: "Profiltek",
+    metric: { value: "+43%", label: "Risposta immediata" },
+    logo: logoProfiltek,
   },
   {
-    quote: "Il modulo DEI ci ha permesso di ottenere la certificazione UNI/PdR 125 e rafforzare il nostro impegno per l'inclusione.",
-    author: "Giuseppe Verdi",
-    role: "Sustainability Manager",
-    company: "GreenCo",
-    metric: { value: "+52%", label: "Inclusion Score" },
+    quote: "Eravamo già consapevoli di alcune aree problematiche, ma Wellbe le ha confermate con un approccio anonimo e user-friendly. La sua semplicità e i dati precisi lo rendono indispensabile.",
+    author: "Sara",
+    role: "Technical Director",
+    company: "Wish",
+    metric: { value: "+52%", label: "Accuratezza analisi" },
+    logo: logoWish,
+  },
+  {
+    quote: "Grazie a Wellbe abbiamo scoperto problemi nascosti che sarebbero altrimenti rimasti sotto il radar. Il report dettagliato ci ha aiutato a vincere l'Innovation Award a SMAU 2023.",
+    author: "Vincenzo",
+    role: "CEO",
+    company: "Gli Artigiani del Riposo",
+    metric: { value: "+46%", label: "Collaborazione team" },
+    logo: logoArtigiani,
   },
 ];
 

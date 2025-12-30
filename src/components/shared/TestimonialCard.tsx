@@ -9,6 +9,7 @@ interface TestimonialCardProps {
     value: string;
     label: string;
   };
+  logo?: string;
 }
 
 export function TestimonialCard({
@@ -17,6 +18,7 @@ export function TestimonialCard({
   role,
   company,
   metric,
+  logo,
 }: TestimonialCardProps) {
   return (
     <div className="relative p-8 rounded-2xl bg-card border border-border hover-lift">
@@ -38,9 +40,15 @@ export function TestimonialCard({
 
       {/* Author */}
       <div className="flex items-center gap-4">
-        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-primary-foreground font-semibold">
-          {author.charAt(0)}
-        </div>
+        {logo ? (
+          <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center p-2">
+            <img src={logo} alt={company} className="max-w-full max-h-full object-contain" />
+          </div>
+        ) : (
+          <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-primary-foreground font-semibold">
+            {author.charAt(0)}
+          </div>
+        )}
         <div>
           <p className="font-semibold text-card-foreground">{author}</p>
           <p className="text-sm text-muted-foreground">
