@@ -1,12 +1,14 @@
 import { Layout } from "@/components/layout/Layout";
 import { SectionHeader } from "@/components/shared/SectionHeader";
-import { Target, Lightbulb, Heart, Shield } from "lucide-react";
+import { Target, Lightbulb, Heart, Shield, ExternalLink } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const team = [
-  { name: "Marco Rossi", role: "CEO & Founder", initials: "MR" },
-  { name: "Laura Bianchi", role: "COO", initials: "LB" },
-  { name: "Giuseppe Verdi", role: "CTO", initials: "GV" },
-  { name: "Anna Neri", role: "Head of Research", initials: "AN" },
+  { name: "Gabriele Zangara", role: "Amministratore Delegato", description: "Leadership strategica e company vision", initials: "GZ" },
+  { name: "Ariosto Ponterio", role: "CPO", description: "Marketing e Prodotto", initials: "AP" },
+  { name: "Luigi Filice", role: "R&D Lead", description: "Ricerca e sviluppo", initials: "LF" },
+  { name: "Antonio Cosma", role: "CFO", description: "Gestione finanziaria", initials: "AC" },
+  { name: "Umile Magarò", role: "BDR", description: "Business Development", initials: "UM" },
 ];
 
 const values = [
@@ -23,7 +25,7 @@ export default function ChiSiamo() {
         <div className="container mx-auto px-4 lg:px-8 text-center">
           <h1 className="text-4xl lg:text-5xl font-bold mb-6">Chi Siamo</h1>
           <p className="text-lg text-primary-foreground/80 max-w-2xl mx-auto">
-            Siamo un team di esperti appassionati di benessere organizzativo, tecnologia e sostenibilità sociale d'impresa.
+            Wellbe è la startup di Blue Innovation dedicata alla Sostenibilità Sociale d'Impresa.
           </p>
         </div>
       </section>
@@ -32,15 +34,30 @@ export default function ChiSiamo() {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <SectionHeader badge="La Nostra Mission" title="Trasformiamo il modo in cui le aziende si prendono cura delle persone" centered={false} />
+              <SectionHeader badge="La Nostra Storia" title="Nati per trasformare il benessere organizzativo" centered={false} />
               <p className="text-muted-foreground leading-relaxed mb-6">
-                Wellbe nasce dalla convinzione che il benessere dei dipendenti sia il fondamento del successo aziendale. La nostra piattaforma integra assessment scientifici, analytics avanzati e strumenti actionable per aiutare le organizzazioni a creare ambienti di lavoro eccellenti.
+                Wellbe nasce dall'esperienza di <strong>Blue Innovation</strong>, azienda specializzata in soluzioni digitali innovative per le imprese. 
+                La nostra missione è rendere misurabile e migliorabile la sostenibilità sociale, mettendo le persone al centro della strategia aziendale.
               </p>
-              <p className="text-muted-foreground leading-relaxed">
-                Collaboriamo con università, consulenti certificati ed esperti di dominio per sviluppare moduli sempre aggiornati e conformi agli standard internazionali.
+              <p className="text-muted-foreground leading-relaxed mb-8">
+                Collaboriamo con università, consulenti certificati ed esperti di dominio per sviluppare assessment scientificamente validati e conformi agli standard internazionali.
               </p>
+              <a href="https://www.blueinnovation.it/" target="_blank" rel="noopener noreferrer">
+                <Button variant="outline" className="font-medium">
+                  Scopri Blue Innovation
+                  <ExternalLink className="ml-2 h-4 w-4" />
+                </Button>
+              </a>
             </div>
-            <div className="aspect-square rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 border border-border" />
+            <div className="aspect-square rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 border border-border flex items-center justify-center p-8">
+              <div className="text-center">
+                <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary to-accent flex items-center justify-center mx-auto mb-4">
+                  <span className="text-3xl font-bold text-primary-foreground">W</span>
+                </div>
+                <p className="text-lg font-semibold text-foreground">Wellbe</p>
+                <p className="text-sm text-muted-foreground">by Blue Innovation</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -65,14 +82,15 @@ export default function ChiSiamo() {
       <section className="py-20 lg:py-28 bg-background">
         <div className="container mx-auto px-4 lg:px-8">
           <SectionHeader badge="Il Team" title="Le persone dietro Wellbe" />
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-5 gap-6">
             {team.map((member) => (
               <div key={member.name} className="text-center">
-                <div className="w-24 h-24 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center mx-auto mb-4">
+                <div className="w-24 h-24 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center mx-auto mb-4 border-4 border-background shadow-lg">
                   <span className="text-2xl font-bold text-primary-foreground">{member.initials}</span>
                 </div>
                 <h3 className="font-semibold text-foreground">{member.name}</h3>
-                <p className="text-sm text-muted-foreground">{member.role}</p>
+                <p className="text-sm font-medium text-primary">{member.role}</p>
+                <p className="text-xs text-muted-foreground mt-1">{member.description}</p>
               </div>
             ))}
           </div>
