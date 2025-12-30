@@ -14,7 +14,7 @@ import logoArtigiani from "@/assets/logo-artigiani.webp";
 const modules = [
   {
     title: "Happiness",
-    description: "Misura il clima organizzativo e il benessere delle persone con strumenti scientifici validati.",
+    description: "Misura il clima organizzativo e il benessere con l'indicatore BWI e ottieni la certificazione digitale.",
     icon: Sparkles,
     color: "blue" as const,
   },
