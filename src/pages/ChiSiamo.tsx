@@ -2,13 +2,18 @@ import { Layout } from "@/components/layout/Layout";
 import { SectionHeader } from "@/components/shared/SectionHeader";
 import { Target, Lightbulb, Heart, Shield, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import teamGabriele from "@/assets/team-gabriele.png";
+import teamAriosto from "@/assets/team-ariosto.png";
+import teamLuigi from "@/assets/team-luigi.png";
+import teamAntonio from "@/assets/team-antonio.png";
+import teamUmile from "@/assets/team-umile.png";
 
 const team = [
-  { name: "Gabriele Zangara", role: "Amministratore Delegato", description: "Leadership strategica e company vision", initials: "GZ" },
-  { name: "Ariosto Ponterio", role: "CPO", description: "Marketing e Prodotto", initials: "AP" },
-  { name: "Luigi Filice", role: "R&D Lead", description: "Ricerca e sviluppo", initials: "LF" },
-  { name: "Antonio Cosma", role: "CFO", description: "Gestione finanziaria", initials: "AC" },
-  { name: "Umile Magarò", role: "BDR", description: "Business Development", initials: "UM" },
+  { name: "Gabriele Zangara", role: "Amministratore Delegato", description: "Leadership strategica e company vision", photo: teamGabriele },
+  { name: "Ariosto Ponterio", role: "CPO", description: "Marketing e Prodotto", photo: teamAriosto },
+  { name: "Luigi Filice", role: "R&D Lead", description: "Ricerca e sviluppo", photo: teamLuigi },
+  { name: "Antonio Cosma", role: "CFO", description: "Gestione finanziaria", photo: teamAntonio },
+  { name: "Umile Magarò", role: "BDR", description: "Business Development", photo: teamUmile },
 ];
 
 const values = [
@@ -85,8 +90,12 @@ export default function ChiSiamo() {
           <div className="grid grid-cols-2 lg:grid-cols-5 gap-6">
             {team.map((member) => (
               <div key={member.name} className="text-center">
-                <div className="w-24 h-24 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center mx-auto mb-4 border-4 border-background shadow-lg">
-                  <span className="text-2xl font-bold text-primary-foreground">{member.initials}</span>
+                <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 border-4 border-primary/20 shadow-lg">
+                  <img 
+                    src={member.photo} 
+                    alt={member.name} 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <h3 className="font-semibold text-foreground">{member.name}</h3>
                 <p className="text-sm font-medium text-primary">{member.role}</p>

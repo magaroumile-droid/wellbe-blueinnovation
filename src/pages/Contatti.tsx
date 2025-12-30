@@ -23,7 +23,7 @@ export default function Contatti() {
               <h2 className="text-2xl font-bold text-foreground mb-6">Scegli un orario</h2>
               <div className="aspect-video lg:aspect-[4/5] rounded-2xl bg-muted border border-border overflow-hidden">
                 <iframe
-                  src="https://calendly.com/d/placeholder"
+                  src="https://meet.brevo.com/umile/wellbe-blue-innovation"
                   width="100%"
                   height="100%"
                   frameBorder="0"
@@ -31,9 +31,6 @@ export default function Contatti() {
                   className="min-h-[500px]"
                 />
               </div>
-              <p className="text-sm text-muted-foreground mt-4">
-                Nota: Sostituisci l'URL di Calendly con il tuo link personale.
-              </p>
             </div>
 
             {/* Contact Info */}
@@ -53,8 +50,8 @@ export default function Contatti() {
                   <Phone className="h-6 w-6 text-primary mt-1" />
                   <div>
                     <h3 className="font-semibold text-foreground">Telefono</h3>
-                    <a href="tel:+393429480842" className="text-primary hover:underline">
-                      +39 02 1234 5678
+                    <a href="tel:+393343415069" className="text-primary hover:underline">
+                      +39 334 341 5069
                     </a>
                   </div>
                 </div>
@@ -62,7 +59,7 @@ export default function Contatti() {
                   <MapPin className="h-6 w-6 text-primary mt-1" />
                   <div>
                     <h3 className="font-semibold text-foreground">Sede</h3>
-                    <p className="text-muted-foreground">Via Roma 123, 20121 Milano (MI)</p>
+                    <p className="text-muted-foreground">Via Gioacchino Rossini, Rende, 87036 CS</p>
                   </div>
                 </div>
               </div>
