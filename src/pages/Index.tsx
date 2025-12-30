@@ -7,6 +7,7 @@ import { TestimonialCard } from "@/components/shared/TestimonialCard";
 import { FAQAccordion, FAQItem } from "@/components/shared/FAQAccordion";
 import { SectionHeader } from "@/components/shared/SectionHeader";
 import { useCountUp } from "@/hooks/useCountUp";
+import { LogoMarquee } from "@/components/shared/LogoMarquee";
 import platformDashboard from "@/assets/platform-dashboard.png";
 import logoProfiltek from "@/assets/logo-profiltek.png";
 import logoWish from "@/assets/logo-wish.png";
@@ -180,6 +181,24 @@ export default function Index() {
         </div>
       </section>
 
+      {/* Client Logos Marquee */}
+      <section className="py-12 bg-background border-b border-border/50">
+        <div className="container mx-auto px-4 lg:px-8 mb-8">
+          <p className="text-center text-sm text-muted-foreground font-medium uppercase tracking-wider">
+            Aziende che ci hanno scelto
+          </p>
+        </div>
+        <LogoMarquee
+          logos={[
+            { src: logoProfiltek, alt: "Profiltek" },
+            { src: logoWish, alt: "Wish Innovation" },
+            { src: logoArtigiani, alt: "Gli Artigiani del Riposo" },
+            { src: logoBeautyprof, alt: "Beautyprof" },
+            { src: logoMsc, alt: "Medical Sport Center" },
+            { src: logoCadis, alt: "Cadis" },
+          ]}
+        />
+      </section>
 
       {/* Modules Section */}
       <section className="py-20 lg:py-28 bg-background">
