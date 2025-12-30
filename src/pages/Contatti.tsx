@@ -9,7 +9,8 @@ export default function Contatti() {
         <div className="container mx-auto px-4 lg:px-8 text-center">
           <h1 className="text-4xl lg:text-5xl font-bold mb-6">Prenota una Demo</h1>
           <p className="text-lg text-primary-foreground/80 max-w-2xl mx-auto">
-            Scopri come Wellbe può trasformare il benessere della tua azienda. Prenota una demo gratuita con il nostro team.
+            Scopri come Wellbe può trasformare il benessere della tua azienda. Prenota una demo gratuita con il nostro
+            team.
           </p>
         </div>
       </section>
@@ -43,14 +44,18 @@ export default function Contatti() {
                   <Mail className="h-6 w-6 text-primary mt-1" />
                   <div>
                     <h3 className="font-semibold text-foreground">Email</h3>
-                    <a href="mailto:info@wellbe.it" className="text-primary hover:underline">info@wellbe.it</a>
+                    <a href="mailto:info@wellbe.it" className="text-primary hover:underline">
+                      info@wellbe.it
+                    </a>
                   </div>
                 </div>
                 <div className="flex items-start gap-4 p-6 rounded-xl bg-muted/50 border border-border">
                   <Phone className="h-6 w-6 text-primary mt-1" />
                   <div>
                     <h3 className="font-semibold text-foreground">Telefono</h3>
-                    <a href="tel:+390212345678" className="text-primary hover:underline">+39 02 1234 5678</a>
+                    <a href="tel:+393429480842" className="text-primary hover:underline">
+                      +39 02 1234 5678
+                    </a>
                   </div>
                 </div>
                 <div className="flex items-start gap-4 p-6 rounded-xl bg-muted/50 border border-border">
