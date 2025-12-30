@@ -142,6 +142,25 @@ export default function Index() {
                 </Button>
               </Link>
             </div>
+            
+            {/* Trust Badge */}
+            <div className="mt-10 animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
+              <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20">
+                <div className="flex -space-x-2">
+                  {[...Array(4)].map((_, i) => (
+                    <div 
+                      key={i} 
+                      className="w-8 h-8 rounded-full bg-gradient-to-br from-accent to-primary border-2 border-primary-foreground/20 flex items-center justify-center text-xs font-bold text-primary-foreground"
+                    >
+                      {['P', 'W', 'A', '+'][i]}
+                    </div>
+                  ))}
+                </div>
+                <span className="text-primary-foreground/90 font-medium">
+                  <span className="text-primary-foreground font-bold">+40 aziende</span> hanno già scelto Wellbe
+                </span>
+              </div>
+            </div>
           </div>
 
           {/* Dashboard Preview */}
