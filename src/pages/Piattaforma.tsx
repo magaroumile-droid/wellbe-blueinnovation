@@ -4,13 +4,18 @@ import { SectionHeader } from "@/components/shared/SectionHeader";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
+import moduleHappiness from "@/assets/module-happiness.png";
+import moduleSafety from "@/assets/module-safety.png";
+import moduleHealthcare from "@/assets/module-healthcare.png";
+import moduleDei from "@/assets/module-dei.png";
+
 const modules = [
   {
     id: "happiness",
     title: "Happiness",
     subtitle: "Benessere e Clima Organizzativo",
     icon: Sparkles,
-    color: "primary",
+    image: moduleHappiness,
     description: "Basato su strumenti validati di psicologia del lavoro, il modulo Happiness misura il benessere percepito e il clima organizzativo della tua azienda.",
     features: ["Assessment basato su modelli scientifici", "Misurazione engagement e soddisfazione", "Report dettagliati per area/team", "Benchmark di settore", "Suggerimenti actionable"],
   },
@@ -19,7 +24,7 @@ const modules = [
     title: "RTQ - Sicurezza e Rischio",
     subtitle: "Percezione della Sicurezza",
     icon: Shield,
-    color: "orange",
+    image: moduleSafety,
     description: "Analizza la percezione della sicurezza sul lavoro e la propensione al rischio dei dipendenti per rafforzare la cultura della prevenzione.",
     features: ["Valutazione percezione rischi", "Analisi comportamenti sicuri", "Cultura della prevenzione", "Conformità normativa", "Piani di miglioramento"],
   },
@@ -28,7 +33,7 @@ const modules = [
     title: "JD-R Healthcare",
     subtitle: "Benessere nel Settore Sanitario",
     icon: Heart,
-    color: "pink",
+    image: moduleHealthcare,
     description: "Modulo specifico per il settore sanitario che analizza l'equilibrio tra richieste lavorative e risorse disponibili secondo il modello Job Demands-Resources.",
     features: ["Modello JD-R validato", "Specifico per healthcare", "Prevenzione burnout", "Valutazione risorse", "Performance team medici"],
   },
@@ -37,7 +42,7 @@ const modules = [
     title: "Parità di Genere",
     subtitle: "Certificazione UNI/PdR 125:2022",
     icon: Users,
-    color: "accent",
+    image: moduleDei,
     isNew: true,
     description: "Valuta le politiche e la cultura aziendale in tema di parità di genere. Supporta il percorso verso la certificazione UNI/PdR 125:2022.",
     features: ["Conformità UNI/PdR 125:2022", "Assessment cultura inclusiva", "Gap analysis parità", "Piano d'azione parità", "Monitoraggio KPI"],
@@ -84,8 +89,12 @@ export default function Piattaforma() {
                   </Link>
                 </div>
                 <div className="flex-1 w-full">
-                  <div className="aspect-video rounded-2xl bg-gradient-to-br from-muted to-muted/50 border border-border p-6 flex items-center justify-center">
-                    <module.icon className="h-24 w-24 text-muted-foreground/30" />
+                  <div className="rounded-2xl bg-gradient-to-br from-muted to-muted/50 border border-border overflow-hidden">
+                    <img 
+                      src={module.image} 
+                      alt={`${module.title} - ${module.subtitle}`}
+                      className="w-full h-auto object-contain"
+                    />
                   </div>
                 </div>
               </div>
