@@ -137,57 +137,63 @@ export default function Index() {
           />
         </div>
 
-        <div className="container mx-auto px-4 lg:px-8 py-24 lg:py-32 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl lg:text-6xl font-bold mb-6 animate-fade-in-up">
-              La prima piattaforma per la{" "}
-              <span className="gradient-text bg-gradient-to-r from-primary-foreground to-accent">
-                Sostenibilità Sociale d'Impresa
-              </span>
-            </h1>
-            <p className="text-lg lg:text-xl text-primary-foreground/80 mb-10 max-w-2xl mx-auto animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
-              Misura benessere, sicurezza, inclusione e clima organizzativo. Trasforma i dati in azioni concrete per le persone e il tuo bilancio di sostenibilità.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
-              <Link to="/contatti">
-                <Button size="lg" className="bg-primary-foreground text-foreground hover:bg-primary-foreground/90 font-semibold px-8">
-                  Prenota una Demo
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-              </Link>
-              <Link to="/piattaforma">
-                <Button size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 font-semibold px-8">
-                  Scopri i Moduli
-                </Button>
-              </Link>
-            </div>
-            
-            {/* Animated Counter Badge */}
-            <div ref={countRef} className="mt-10 animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
-              <div className="inline-flex items-center gap-4 px-8 py-4 rounded-2xl bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20">
-                <div className="flex items-center justify-center w-14 h-14 rounded-xl bg-primary-foreground/20">
-                  <Building2 className="w-7 h-7 text-primary-foreground" />
-                </div>
-                <div className="text-left">
-                  <div className="text-3xl font-bold text-primary-foreground">
-                    +{companyCount}
+        <div className="container mx-auto px-4 lg:px-8 py-20 lg:py-28 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Left - Text Content */}
+            <div className="text-left">
+              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 animate-fade-in-up">
+                La prima piattaforma per la{" "}
+                <span className="gradient-text bg-gradient-to-r from-primary-foreground to-accent">
+                  Sostenibilità Sociale d'Impresa
+                </span>
+              </h1>
+              <p className="text-lg lg:text-xl text-primary-foreground/80 mb-8 animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
+                Misura benessere, sicurezza, inclusione e clima organizzativo. Trasforma i dati in azioni concrete per le persone e il tuo bilancio di sostenibilità.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
+                <Link to="/contatti">
+                  <Button size="lg" className="bg-primary-foreground text-foreground hover:bg-primary-foreground/90 font-semibold px-8">
+                    Prenota una Demo
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+                </Link>
+                <Link to="/piattaforma">
+                  <Button size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 font-semibold px-8">
+                    Scopri i Moduli
+                  </Button>
+                </Link>
+              </div>
+              
+              {/* Animated Counter Badge */}
+              <div ref={countRef} className="mt-8 animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
+                <div className="inline-flex items-center gap-4 px-6 py-3 rounded-2xl bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20">
+                  <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-primary-foreground/20">
+                    <Building2 className="w-6 h-6 text-primary-foreground" />
                   </div>
-                  <div className="text-sm text-primary-foreground/80">
-                    aziende hanno già scelto Wellbe
+                  <div className="text-left">
+                    <div className="text-2xl font-bold text-primary-foreground">
+                      +{companyCount}
+                    </div>
+                    <div className="text-sm text-primary-foreground/80">
+                      aziende hanno già scelto Wellbe
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          {/* Dashboard Preview */}
-          <div className="mt-16 lg:mt-24 max-w-5xl mx-auto animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-primary-foreground/10">
-              <img 
-                src={platformDashboard} 
-                alt="Wellbe Platform Dashboard - Analytics e insights per la sostenibilità sociale"
-                className="w-full h-auto"
-              />
+            {/* Right - Dashboard Preview */}
+            <div className="animate-fade-in-up lg:animate-none" style={{ animationDelay: "0.3s" }}>
+              <div 
+                className="relative rounded-2xl overflow-hidden shadow-2xl border border-primary-foreground/10 transition-transform duration-300"
+                style={{ transform: `translateY(${-offset * 0.1}px)` }}
+              >
+                <img 
+                  src={platformDashboard} 
+                  alt="Wellbe Platform Dashboard - Analytics e insights per la sostenibilità sociale"
+                  className="w-full h-auto"
+                />
+              </div>
             </div>
           </div>
         </div>
