@@ -8,7 +8,6 @@ const navLinks = [
   { name: "Home", path: "/" },
   { name: "Piattaforma", path: "/piattaforma" },
   { name: "Chi Siamo", path: "/chi-siamo" },
-  { name: "Casi Studio", path: "/casi-studio" },
   { name: "FAQ", path: "/faq" },
   { name: "Pricing", path: "/pricing" },
 ];

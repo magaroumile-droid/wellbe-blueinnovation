@@ -6,11 +6,10 @@ const footerLinks = {
     { name: "Happiness", path: "/piattaforma#happiness" },
     { name: "Sicurezza e Rischio", path: "/piattaforma#sicurezza" },
     { name: "JD-R Healthcare", path: "/piattaforma#jdr" },
-    { name: "DEI", path: "/piattaforma#dei" },
+    { name: "Parità di Genere", path: "/piattaforma#parita-genere" },
   ],
   azienda: [
     { name: "Chi Siamo", path: "/chi-siamo" },
-    { name: "Casi Studio", path: "/casi-studio" },
     { name: "Pricing", path: "/pricing" },
     { name: "Contatti", path: "/contatti" },
   ],
