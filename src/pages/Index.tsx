@@ -6,7 +6,7 @@ import { ModuleCard } from "@/components/shared/ModuleCard";
 import { TestimonialCard } from "@/components/shared/TestimonialCard";
 import { FAQAccordion, FAQItem } from "@/components/shared/FAQAccordion";
 import { SectionHeader } from "@/components/shared/SectionHeader";
-import { LogoBar } from "@/components/shared/LogoBar";
+import platformDashboard from "@/assets/platform-dashboard.png";
 
 const modules = [
   {
@@ -114,16 +114,13 @@ export default function Index() {
 
         <div className="container mx-auto px-4 lg:px-8 py-24 lg:py-32 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <span className="inline-block px-4 py-1.5 rounded-full bg-primary-foreground/10 text-primary-foreground text-sm font-medium mb-6 animate-fade-in-up">
-              La dimensione "S" degli ESG
-            </span>
-            <h1 className="text-4xl lg:text-6xl font-bold mb-6 animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
-              La piattaforma per la{" "}
+            <h1 className="text-4xl lg:text-6xl font-bold mb-6 animate-fade-in-up">
+              La prima piattaforma per la{" "}
               <span className="gradient-text bg-gradient-to-r from-primary-foreground to-accent">
                 Sostenibilità Sociale d'Impresa
               </span>
             </h1>
-            <p className="text-lg lg:text-xl text-primary-foreground/80 mb-10 max-w-2xl mx-auto animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+            <p className="text-lg lg:text-xl text-primary-foreground/80 mb-10 max-w-2xl mx-auto animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
               Misura benessere, sicurezza, inclusione e clima organizzativo. Trasforma i dati in azioni concrete per le persone e il tuo bilancio di sostenibilità.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
@@ -142,41 +139,13 @@ export default function Index() {
           </div>
 
           {/* Dashboard Preview */}
-          <div className="mt-16 lg:mt-24 max-w-5xl mx-auto animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
+          <div className="mt-16 lg:mt-24 max-w-5xl mx-auto animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-primary-foreground/10">
-              <div className="aspect-video bg-gradient-to-br from-card to-muted p-6 lg:p-10">
-                <div className="h-full rounded-xl bg-background/95 backdrop-blur p-4 lg:p-6 flex flex-col">
-                  {/* Mock Dashboard Header */}
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="w-10 h-10 rounded-lg bg-primary/20" />
-                    <div className="flex-1">
-                      <div className="h-4 w-32 bg-muted rounded" />
-                      <div className="h-3 w-24 bg-muted/50 rounded mt-2" />
-                    </div>
-                    <div className="flex gap-2">
-                      <div className="w-24 h-8 bg-primary/10 rounded-lg" />
-                      <div className="w-24 h-8 bg-accent/10 rounded-lg" />
-                    </div>
-                  </div>
-                  {/* Mock Dashboard Content */}
-                  <div className="flex-1 grid grid-cols-3 gap-4">
-                    <div className="col-span-2 bg-muted/30 rounded-xl p-4">
-                      <div className="h-4 w-24 bg-muted rounded mb-4" />
-                      <div className="h-32 bg-gradient-to-t from-primary/20 to-transparent rounded-lg" />
-                    </div>
-                    <div className="space-y-4">
-                      <div className="bg-muted/30 rounded-xl p-4 h-1/2">
-                        <div className="h-4 w-16 bg-muted rounded mb-2" />
-                        <div className="text-2xl font-bold text-primary">87%</div>
-                      </div>
-                      <div className="bg-muted/30 rounded-xl p-4 h-1/2">
-                        <div className="h-4 w-16 bg-muted rounded mb-2" />
-                        <div className="text-2xl font-bold text-accent">+12%</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <img 
+                src={platformDashboard} 
+                alt="Wellbe Platform Dashboard - Analytics e insights per la sostenibilità sociale"
+                className="w-full h-auto"
+              />
             </div>
           </div>
         </div>
