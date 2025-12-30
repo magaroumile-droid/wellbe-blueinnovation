@@ -11,25 +11,25 @@ import { LogoBar } from "@/components/shared/LogoBar";
 const modules = [
   {
     title: "Happiness",
-    description: "Misura il benessere e il clima organizzativo con strumenti basati sulla psicologia del lavoro.",
+    description: "Misura il clima organizzativo e il benessere delle persone con strumenti scientifici validati.",
     icon: Sparkles,
     color: "blue" as const,
   },
   {
     title: "Sicurezza e Rischio",
-    description: "Analizza la percezione della sicurezza e la propensione al rischio per rafforzare la cultura della prevenzione.",
+    description: "Analizza la percezione della sicurezza e promuovi una cultura della prevenzione responsabile.",
     icon: Shield,
     color: "orange" as const,
   },
   {
     title: "JD-R Healthcare",
-    description: "Valuta l'equilibrio tra richieste lavorative e risorse nel settore sanitario per il benessere del personale.",
+    description: "Bilancia richieste e risorse nel settore sanitario per proteggere chi si prende cura degli altri.",
     icon: Heart,
     color: "pink" as const,
   },
   {
     title: "DEI",
-    description: "Valuta le politiche aziendali su diversità, equità e inclusione. Conformità UNI/PdR 125:2022.",
+    description: "Costruisci un ambiente inclusivo: diversità, equità e parità come pilastri della sostenibilità sociale.",
     icon: Users,
     color: "green" as const,
     isNew: true,
@@ -38,39 +38,39 @@ const modules = [
 
 const benefits = [
   {
-    title: "Conformità agli Standard",
-    description: "I nostri assessment sono conformi agli standard nazionali e internazionali, garantendo validità scientifica e riconoscimento normativo.",
-    icon: "🏆",
+    title: "Impatto Sociale Misurabile",
+    description: "Trasforma il benessere organizzativo in KPI concreti per il tuo bilancio di sostenibilità e report ESG.",
+    icon: "📊",
   },
   {
-    title: "Esperti Certificati",
-    description: "Collaboriamo con consulenti certificati ed esperti di dominio per co-progettare moduli su misura per le tue esigenze.",
-    icon: "👥",
+    title: "Persone al Centro",
+    description: "Ogni assessment mette le persone al centro, valorizzando il capitale umano come asset strategico dell'impresa.",
+    icon: "💚",
   },
   {
-    title: "Trend Emergenti",
-    description: "Monitoriamo costantemente i trend emergenti nel benessere organizzativo per offrirti soluzioni sempre aggiornate.",
-    icon: "📈",
+    title: "Responsabilità d'Impresa",
+    description: "Conformità agli standard nazionali e internazionali per una governance sociale solida e trasparente.",
+    icon: "🏛️",
   },
 ];
 
 const testimonials = [
   {
-    quote: "Wellbe ha trasformato il modo in cui misuriamo e miglioriamo il benessere dei nostri dipendenti. I risultati sono stati sorprendenti.",
+    quote: "Grazie a Wellbe abbiamo integrato la sostenibilità sociale nel nostro piano strategico. Un cambio di paradigma per l'intera organizzazione.",
     author: "Marco Rossi",
     role: "HR Director",
     company: "TechCorp Italia",
     metric: { value: "+43%", label: "Engagement" },
   },
   {
-    quote: "La dashboard è intuitiva e i report ci permettono di prendere decisioni basate sui dati. Consiglio Wellbe a tutte le aziende.",
+    quote: "I dati di Wellbe alimentano direttamente il nostro bilancio di sostenibilità. Finalmente metriche sociali concrete e affidabili.",
     author: "Laura Bianchi",
     role: "CEO",
     company: "Innovate Srl",
     metric: { value: "-30%", label: "Turnover" },
   },
   {
-    quote: "Il modulo DEI ci ha aiutato a ottenere la certificazione UNI/PdR 125. Un partner affidabile per la sostenibilità sociale.",
+    quote: "Il modulo DEI ci ha permesso di ottenere la certificazione UNI/PdR 125 e rafforzare il nostro impegno per l'inclusione.",
     author: "Giuseppe Verdi",
     role: "Sustainability Manager",
     company: "GreenCo",
@@ -80,24 +80,24 @@ const testimonials = [
 
 const homepageFAQs: FAQItem[] = [
   {
-    question: "Cos'è Wellbe e cosa offre?",
-    answer: "Wellbe è l'unica piattaforma integrata per la Sostenibilità Sociale d'Impresa. Offriamo assessment scientifici per misurare benessere, sicurezza, DEI e molto altro, con dashboard intuitive e report dettagliati.",
+    question: "Cos'è la Sostenibilità Sociale d'Impresa?",
+    answer: "La Sostenibilità Sociale d'Impresa è la dimensione 'S' degli ESG: riguarda il benessere delle persone, la sicurezza sul lavoro, l'inclusione e l'equità. Wellbe ti aiuta a misurarla e migliorarla con dati concreti.",
+  },
+  {
+    question: "Come Wellbe supporta il bilancio di sostenibilità?",
+    answer: "Wellbe fornisce metriche validate scientificamente che possono essere integrate direttamente nel tuo report ESG e bilancio di sostenibilità, dimostrando l'impegno concreto verso le persone.",
   },
   {
     question: "A chi si rivolge la piattaforma?",
-    answer: "Wellbe si rivolge a tutte le aziende che vogliono investire nel benessere dei propri dipendenti: dalle PMI alle grandi imprese, dal settore privato al pubblico, incluso il settore sanitario.",
-  },
-  {
-    question: "È disponibile una demo gratuita?",
-    answer: "Sì! Puoi prenotare una demo gratuita direttamente dal nostro sito. Ti mostreremo tutte le funzionalità della piattaforma e risponderemo alle tue domande.",
+    answer: "A tutte le organizzazioni che vogliono mettere le persone al centro: imprese, enti pubblici, settore sanitario. Dalla PMI alla grande azienda, Wellbe si adatta alle tue esigenze.",
   },
   {
     question: "Come vengono protetti i dati dei dipendenti?",
-    answer: "La sicurezza dei dati è la nostra priorità. Siamo pienamente conformi al GDPR, garantiamo l'anonimato delle risposte e utilizziamo crittografia end-to-end per tutti i dati.",
+    answer: "La sicurezza dei dati è la nostra priorità. Siamo pienamente conformi al GDPR, garantiamo l'anonimato delle risposte e utilizziamo crittografia end-to-end.",
   },
   {
-    question: "Quanto tempo richiede l'implementazione?",
-    answer: "L'implementazione di Wellbe è rapida e semplice. In media, le aziende sono operative in meno di una settimana, con il supporto del nostro team dedicato.",
+    question: "È disponibile una demo gratuita?",
+    answer: "Sì! Prenota una demo gratuita per scoprire come Wellbe può supportare la tua strategia di sostenibilità sociale.",
   },
 ];
 
@@ -115,16 +115,16 @@ export default function Index() {
         <div className="container mx-auto px-4 lg:px-8 py-24 lg:py-32 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <span className="inline-block px-4 py-1.5 rounded-full bg-primary-foreground/10 text-primary-foreground text-sm font-medium mb-6 animate-fade-in-up">
-              Piattaforma di Sostenibilità Sociale d'Impresa
+              La dimensione "S" degli ESG
             </span>
             <h1 className="text-4xl lg:text-6xl font-bold mb-6 animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
-              Il benessere dei tuoi dipendenti,{" "}
+              La piattaforma per la{" "}
               <span className="gradient-text bg-gradient-to-r from-primary-foreground to-accent">
-                misurato e migliorato
+                Sostenibilità Sociale d'Impresa
               </span>
             </h1>
             <p className="text-lg lg:text-xl text-primary-foreground/80 mb-10 max-w-2xl mx-auto animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
-              Assessment scientifici, dashboard intuitive e insight azionabili per trasformare la tua azienda in un luogo di lavoro eccellente.
+              Misura benessere, sicurezza, inclusione e clima organizzativo. Trasforma i dati in azioni concrete per le persone e il tuo bilancio di sostenibilità.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
               <Link to="/contatti">
@@ -190,8 +190,8 @@ export default function Index() {
         <div className="container mx-auto px-4 lg:px-8">
           <SectionHeader
             badge="I Nostri Moduli"
-            title="Assessment per ogni esigenza"
-            description="Co-progettiamo moduli con consulenti certificati ed esperti di dominio. Conformi agli standard nazionali e internazionali."
+            title="I pilastri della Sostenibilità Sociale"
+            description="Quattro aree chiave per misurare e migliorare l'impatto sociale della tua organizzazione."
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {modules.map((module, index) => (
@@ -220,8 +220,8 @@ export default function Index() {
         <div className="container mx-auto px-4 lg:px-8">
           <SectionHeader
             badge="Perché Wellbe"
-            title="I vantaggi della piattaforma"
-            description="Una soluzione completa per la sostenibilità sociale della tua impresa."
+            title="La 'S' di ESG, finalmente misurabile"
+            description="Dati concreti per dimostrare il tuo impegno verso le persone e la comunità aziendale."
           />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {benefits.map((benefit, index) => (
@@ -248,8 +248,8 @@ export default function Index() {
         <div className="container mx-auto px-4 lg:px-8">
           <SectionHeader
             badge="Testimonianze"
-            title="Le storie dei nostri clienti"
-            description="Scopri come Wellbe sta trasformando il benessere organizzativo nelle aziende italiane."
+            title="Chi ha scelto la sostenibilità sociale"
+            description="Storie di organizzazioni che hanno messo le persone al centro della loro strategia."
           />
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
@@ -295,10 +295,10 @@ export default function Index() {
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl lg:text-5xl font-bold mb-6">
-              Pronto a trasformare il benessere della tua azienda?
+              Pronto a investire nelle persone?
             </h2>
             <p className="text-lg text-primary-foreground/80 mb-10">
-              Prenota una demo gratuita e scopri come Wellbe può aiutarti a creare un ambiente di lavoro eccellente.
+              Scopri come la Sostenibilità Sociale d'Impresa può diventare il tuo vantaggio competitivo.
             </p>
             <Link to="/contatti">
               <Button size="lg" className="bg-primary-foreground text-foreground hover:bg-primary-foreground/90 font-semibold px-10">
