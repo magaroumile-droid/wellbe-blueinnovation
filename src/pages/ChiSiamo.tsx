@@ -2,6 +2,7 @@ import { Layout } from "@/components/layout/Layout";
 import { SectionHeader } from "@/components/shared/SectionHeader";
 import { Target, Lightbulb, Heart, Shield, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import wellbeLogo from "@/assets/wellbe-logo.png";
 import teamGabriele from "@/assets/team-gabriele.png";
 import teamAriosto from "@/assets/team-ariosto.png";
 import teamLuigi from "@/assets/team-luigi.png";
@@ -54,14 +55,8 @@ export default function ChiSiamo() {
                 </Button>
               </a>
             </div>
-            <div className="aspect-square rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 border border-border flex items-center justify-center p-8">
-              <div className="text-center">
-                <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary to-accent flex items-center justify-center mx-auto mb-4">
-                  <span className="text-3xl font-bold text-primary-foreground">W</span>
-                </div>
-                <p className="text-lg font-semibold text-foreground">Wellbe</p>
-                <p className="text-sm text-muted-foreground">by Blue Innovation</p>
-              </div>
+            <div className="aspect-square rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 border border-border flex items-center justify-center p-12">
+              <img src={wellbeLogo} alt="Wellbe" className="max-w-full max-h-full object-contain" />
             </div>
           </div>
         </div>
