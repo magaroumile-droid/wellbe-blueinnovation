@@ -61,10 +61,10 @@ export default {
           ring: "hsl(var(--sidebar-ring))",
         },
         wellbe: {
+          navy: "hsl(var(--wellbe-navy))",
           blue: "hsl(var(--wellbe-blue))",
-          "blue-dark": "hsl(var(--wellbe-blue-dark))",
-          green: "hsl(var(--wellbe-green))",
-          "green-light": "hsl(var(--wellbe-green-light))",
+          "blue-light": "hsl(var(--wellbe-blue-light))",
+          "blue-pale": "hsl(var(--wellbe-blue-pale))",
           purple: "hsl(var(--wellbe-purple))",
           orange: "hsl(var(--wellbe-orange))",
           pink: "hsl(var(--wellbe-pink))",
