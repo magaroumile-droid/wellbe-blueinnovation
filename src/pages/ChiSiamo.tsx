@@ -11,9 +11,9 @@ import teamUmile from "@/assets/team-umile.png";
 
 const team = [
   { name: "Gabriele Zangara", role: "Amministratore Delegato", description: "Leadership strategica e company vision", photo: teamGabriele },
-  { name: "Ariosto Ponterio", role: "CPO", description: "Marketing e Prodotto", photo: teamAriosto },
-  { name: "Luigi Filice", role: "R&D Lead", description: "Ricerca e sviluppo", photo: teamLuigi },
-  { name: "Antonio Cosma", role: "CFO", description: "Gestione finanziaria", photo: teamAntonio },
+  { name: "Ariosto Ponterio", role: "CPO", description: "Marketing e Prodotto", photo: teamAntonio },
+  { name: "Luigi Filice", role: "R&D Lead", description: "Ricerca e sviluppo", photo: teamAriosto },
+  { name: "Antonio Cosma", role: "CFO", description: "Gestione finanziaria", photo: teamLuigi },
   { name: "Umile Magarò", role: "BDR", description: "Business Development", photo: teamUmile },
 ];
 
