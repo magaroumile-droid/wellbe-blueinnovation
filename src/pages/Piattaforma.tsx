@@ -33,14 +33,14 @@ const modules = [
     features: ["Modello JD-R validato", "Specifico per healthcare", "Prevenzione burnout", "Valutazione risorse", "Performance team medici"],
   },
   {
-    id: "dei",
-    title: "DEI",
-    subtitle: "Diversity, Equity & Inclusion",
+    id: "parita-genere",
+    title: "Parità di Genere",
+    subtitle: "Certificazione UNI/PdR 125:2022",
     icon: Users,
     color: "accent",
     isNew: true,
-    description: "Valuta le politiche e la cultura aziendale in tema di diversità, equità e inclusione. Conforme alla certificazione UNI/PdR 125:2022.",
-    features: ["Conformità UNI/PdR 125:2022", "Assessment cultura inclusiva", "Gap analysis parità", "Piano d'azione DEI", "Monitoraggio KPI"],
+    description: "Valuta le politiche e la cultura aziendale in tema di parità di genere. Supporta il percorso verso la certificazione UNI/PdR 125:2022.",
+    features: ["Conformità UNI/PdR 125:2022", "Assessment cultura inclusiva", "Gap analysis parità", "Piano d'azione parità", "Monitoraggio KPI"],
   },
 ];
 
