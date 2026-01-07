@@ -85,11 +85,11 @@ export default function ChiSiamo() {
           <div className="grid grid-cols-2 lg:grid-cols-5 gap-6">
             {team.map((member) => (
               <div key={member.name} className="text-center">
-                <div className="w-32 h-32 mx-auto mb-4">
+                <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 border-4 border-primary/20 shadow-lg">
                   <img 
                     src={member.photo} 
                     alt={member.name} 
-                    className="w-full h-full object-contain"
+                    className="w-full h-full object-cover"
                   />
                 </div>
                 <h3 className="font-semibold text-foreground">{member.name}</h3>
