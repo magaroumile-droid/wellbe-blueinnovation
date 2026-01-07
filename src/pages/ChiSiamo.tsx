@@ -79,27 +79,6 @@ export default function ChiSiamo() {
         </div>
       </section>
 
-      <section className="py-20 lg:py-28 bg-background">
-        <div className="container mx-auto px-4 lg:px-8">
-          <SectionHeader badge="Il Team" title="Le persone dietro Wellbe" />
-          <div className="grid grid-cols-2 lg:grid-cols-5 gap-6">
-            {team.map((member) => (
-              <div key={member.name} className="text-center">
-                <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 border-4 border-primary/20 shadow-lg">
-                  <img 
-                    src={member.photo} 
-                    alt={member.name} 
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <h3 className="font-semibold text-foreground">{member.name}</h3>
-                <p className="text-sm font-medium text-primary">{member.role}</p>
-                <p className="text-xs text-muted-foreground mt-1">{member.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
     </Layout>
   );
 }
