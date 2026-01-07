@@ -16,6 +16,9 @@ import logoArtigiani from "@/assets/logo-artigiani.png";
 import logoBeautyprof from "@/assets/logo-beautyprof.png";
 import logoMsc from "@/assets/logo-msc.png";
 import logoCadis from "@/assets/logo-cadis.png";
+import logoSynedrio from "@/assets/logo-synedrio.png";
+import logoTodsystem from "@/assets/logo-todsystem.jpg";
+import logoFluentis from "@/assets/logo-fluentis.png";
 
 const modules = [
   {
@@ -214,6 +217,9 @@ export default function Index() {
             { src: logoBeautyprof, alt: "Beautyprof" },
             { src: logoMsc, alt: "Medical Sport Center" },
             { src: logoCadis, alt: "Cadis" },
+            { src: logoSynedrio, alt: "Synedrio Coworking" },
+            { src: logoTodsystem, alt: "Tod System" },
+            { src: logoFluentis, alt: "Fluentis" },
           ]}
         />
       </section>
