@@ -95,8 +95,8 @@ const testimonials = [
 
 const homepageFAQs: FAQItem[] = [
   {
-    question: "Cos'è la Sostenibilità Sociale d'Impresa?",
-    answer: "La Sostenibilità Sociale d'Impresa è la dimensione 'S' degli ESG: riguarda il benessere delle persone, la sicurezza sul lavoro, l'inclusione e l'equità. Wellbe ti aiuta a misurarla e migliorarla con dati concreti.",
+    question: "Cos'è la Responsabilità Sociale d'Impresa?",
+    answer: "La Responsabilità Sociale d'Impresa è la dimensione 'S' degli ESG: riguarda il benessere delle persone, la sicurezza sul lavoro, l'inclusione e l'equità. Wellbe ti aiuta a misurarla e migliorarla con dati concreti.",
   },
   {
     question: "Come Wellbe supporta il bilancio di sostenibilità?",
@@ -147,7 +147,7 @@ export default function Index() {
               <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 animate-fade-in-up">
                 La prima piattaforma per la{" "}
                 <span className="gradient-text bg-gradient-to-r from-primary-foreground to-accent">
-                  Sostenibilità Sociale d'Impresa
+                  Responsabilità Sociale d'Impresa
                 </span>
               </h1>
               <p className="text-lg lg:text-xl text-primary-foreground/80 mb-8 animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
@@ -229,7 +229,7 @@ export default function Index() {
         <div className="container mx-auto px-4 lg:px-8">
           <SectionHeader
             badge="I Nostri Moduli"
-            title="I pilastri della Sostenibilità Sociale"
+            title="I pilastri della Responsabilità Sociale"
             description="Quattro aree chiave per misurare e migliorare l'impatto sociale della tua organizzazione."
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -337,7 +337,7 @@ export default function Index() {
               Pronto a investire nelle persone?
             </h2>
             <p className="text-lg text-primary-foreground/80 mb-10">
-              Scopri come la Sostenibilità Sociale d'Impresa può diventare il tuo vantaggio competitivo.
+              Scopri come la Responsabilità Sociale d'Impresa può diventare il tuo vantaggio competitivo.
             </p>
             <Link to="/contatti">
               <Button size="lg" className="bg-primary-foreground text-foreground hover:bg-primary-foreground/90 font-semibold px-10">
