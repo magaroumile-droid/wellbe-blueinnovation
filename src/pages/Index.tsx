@@ -34,8 +34,8 @@ const modules = [
     color: "orange" as const,
   },
   {
-    title: "JD-R Healthcare",
-    description: "Bilancia richieste e risorse nel settore sanitario per proteggere chi si prende cura degli altri.",
+    title: "Wellbe Care",
+    description: "Assessment dedicato al personale sanitario per monitorare il benessere e prevenire il burnout.",
     icon: Heart,
     color: "pink" as const,
   },
