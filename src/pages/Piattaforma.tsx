@@ -29,13 +29,13 @@ const modules = [
     features: ["Valutazione percezione rischi", "Analisi comportamenti sicuri", "Cultura della prevenzione", "Conformità normativa", "Piani di miglioramento"],
   },
   {
-    id: "jdr",
-    title: "JD-R Healthcare",
-    subtitle: "Benessere nel Settore Sanitario",
+    id: "wellbe-care",
+    title: "Wellbe Care",
+    subtitle: "Assessment per il Personale Sanitario",
     icon: Heart,
     image: moduleHealthcare,
-    description: "Modulo specifico per il settore sanitario che analizza l'equilibrio tra richieste lavorative e risorse disponibili secondo il modello Job Demands-Resources.",
-    features: ["Modello JD-R validato", "Specifico per healthcare", "Prevenzione burnout", "Valutazione risorse", "Performance team medici"],
+    description: "Assessment dedicato alle Direzioni Sanitarie per monitorare il benessere del personale sanitario, prevenire il burnout e migliorare la qualità del lavoro.",
+    features: ["Assessment validato", "Specifico per healthcare", "Prevenzione burnout", "Monitoraggio benessere", "Performance team medici"],
   },
   {
     id: "parita-genere",

@@ -6,7 +6,7 @@ const footerLinks = {
   piattaforma: [
     { name: "Happiness", path: "/piattaforma#happiness" },
     { name: "Sicurezza e Rischio", path: "/piattaforma#sicurezza" },
-    { name: "JD-R Healthcare", path: "/piattaforma#jdr" },
+    { name: "Wellbe Care", path: "/piattaforma#wellbe-care" },
     { name: "Parità di Genere", path: "/piattaforma#parita-genere" },
   ],
   azienda: [
