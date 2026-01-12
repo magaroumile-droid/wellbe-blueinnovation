@@ -20,13 +20,13 @@ const modules = [
     features: ["Indicatore BWI proprietario", "Certificazione e badge digitale BWI", "Assessment basato su modelli scientifici", "Report dettagliati per area/team", "Benchmark di settore"],
   },
   {
-    id: "sicurezza",
-    title: "Sicurezza e Rischio",
-    subtitle: "Percezione della Sicurezza",
+    id: "safety-awareness",
+    title: "Safety Awareness",
+    subtitle: "Percezione della Safety",
     icon: Shield,
     image: moduleSafety,
-    description: "Analizza la percezione della sicurezza sul lavoro per rafforzare la cultura della prevenzione.",
-    features: ["Valutazione percezione rischi", "Analisi comportamenti sicuri", "Cultura della prevenzione", "Conformità normativa", "Piani di miglioramento"],
+    description: "Analizza in modo strutturato la percezione della safety da parte dei dipendenti, con l'obiettivo di rafforzare una cultura della prevenzione all'interno dell'organizzazione.",
+    features: ["Valutazione percezione safety", "Analisi comportamenti sicuri", "Cultura della prevenzione", "Conformità normativa", "Piani di miglioramento"],
   },
   {
     id: "wellbe-care",
