@@ -161,7 +161,7 @@ export default function Index() {
                   </Button>
                 </Link>
                 <Link to="/piattaforma">
-                  <Button size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 font-semibold px-8">
+                  <Button size="lg" className="bg-white/20 backdrop-blur-sm border-2 border-white text-white hover:bg-white hover:text-primary font-semibold px-8">
                     Scopri i Moduli
                   </Button>
                 </Link>
