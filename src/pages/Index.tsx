@@ -28,8 +28,8 @@ const modules = [
     color: "blue" as const,
   },
   {
-    title: "Sicurezza e Rischio",
-    description: "Analizza la percezione della sicurezza e promuovi una cultura della prevenzione responsabile.",
+    title: "Safety Awareness",
+    description: "Analizza la percezione della safety per rafforzare una cultura della prevenzione in azienda.",
     icon: Shield,
     color: "orange" as const,
   },
