@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
-import { Linkedin, Twitter, Mail } from "lucide-react";
+import { Linkedin, Mail } from "lucide-react";
 import wellbeLogo from "@/assets/wellbe-logo.png";
 
 const footerLinks = {
   piattaforma: [
     { name: "Happiness", path: "/piattaforma#happiness" },
-    { name: "Sicurezza e Rischio", path: "/piattaforma#sicurezza" },
+    { name: "Safety Awareness", path: "/piattaforma#safety-awareness" },
     { name: "Wellbe Care", path: "/piattaforma#wellbe-care" },
     { name: "Parità di Genere", path: "/piattaforma#parita-genere" },
   ],
@@ -16,8 +16,7 @@ const footerLinks = {
   ],
   risorse: [
     { name: "FAQ", path: "/faq" },
-    { name: "Privacy Policy", path: "/privacy" },
-    { name: "Termini di Servizio", path: "/termini" },
+    { name: "Privacy Policy", href: "https://www.blueinnovation.it/privacy-policy/", external: true },
   ],
 };
 
@@ -32,29 +31,23 @@ export function Footer() {
               <img src={wellbeLogo} alt="Wellbe" className="h-10 brightness-0 invert" />
             </Link>
             <p className="text-background/70 text-sm leading-relaxed max-w-sm mb-6">
-              L'unica piattaforma per la Sostenibilità Sociale d'Impresa. 
+              L'unica piattaforma per la Responsabilità Sociale d'Impresa. 
               Migliora il benessere dei tuoi dipendenti con assessment scientifici e dashboard intuitive.
             </p>
             <div className="flex gap-4">
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/company/blueinnovation-srl/?viewAsMember=true"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-primary transition-colors"
+                aria-label="Seguici su LinkedIn"
               >
                 <Linkedin className="h-5 w-5" />
               </a>
               <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-primary transition-colors"
-              >
-                <Twitter className="h-5 w-5" />
-              </a>
-              <a
                 href="mailto:info@wellbe.it"
                 className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-primary transition-colors"
+                aria-label="Contattaci via email"
               >
                 <Mail className="h-5 w-5" />
               </a>
@@ -98,13 +91,24 @@ export function Footer() {
             <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider">Risorse</h4>
             <ul className="space-y-3">
               {footerLinks.risorse.map((link) => (
-                <li key={link.path}>
-                  <Link
-                    to={link.path}
-                    className="text-background/70 hover:text-primary text-sm transition-colors"
-                  >
-                    {link.name}
-                  </Link>
+                <li key={'external' in link ? link.href : link.path}>
+                  {'external' in link ? (
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-background/70 hover:text-primary text-sm transition-colors"
+                    >
+                      {link.name}
+                    </a>
+                  ) : (
+                    <Link
+                      to={link.path}
+                      className="text-background/70 hover:text-primary text-sm transition-colors"
+                    >
+                      {link.name}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
