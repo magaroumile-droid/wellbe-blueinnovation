@@ -4,10 +4,10 @@ import wellbeLogo from "@/assets/wellbe-logo.png";
 
 const footerLinks = {
   piattaforma: [
-    { name: "Happiness", path: "/piattaforma#happiness" },
-    { name: "Safety Awareness", path: "/piattaforma#safety-awareness" },
-    { name: "Wellbe Care", path: "/piattaforma#wellbe-care" },
-    { name: "Parità di Genere", path: "/piattaforma#parita-genere" },
+    { name: "Happiness", hash: "happiness" },
+    { name: "Safety Awareness", hash: "safety-awareness" },
+    { name: "Wellbe Care", hash: "wellbe-care" },
+    { name: "Parità di Genere", hash: "parita-genere" },
   ],
   azienda: [
     { name: "Chi Siamo", path: "/chi-siamo" },
@@ -59,9 +59,17 @@ export function Footer() {
             <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider">Piattaforma</h4>
             <ul className="space-y-3">
               {footerLinks.piattaforma.map((link) => (
-                <li key={link.path}>
+                <li key={link.hash}>
                   <Link
-                    to={link.path}
+                    to={`/piattaforma#${link.hash}`}
+                    onClick={() => {
+                      setTimeout(() => {
+                        const element = document.getElementById(link.hash);
+                        if (element) {
+                          element.scrollIntoView({ behavior: 'smooth' });
+                        }
+                      }, 100);
+                    }}
                     className="text-background/70 hover:text-primary text-sm transition-colors"
                   >
                     {link.name}
