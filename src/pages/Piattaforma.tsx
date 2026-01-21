@@ -82,11 +82,18 @@ export default function Piattaforma() {
                   {module.partnerLogo && (
                     <div className="flex items-center gap-3 mb-6 p-3 bg-muted/50 rounded-lg border border-border">
                       <span className="text-sm text-muted-foreground">Co-progettato con</span>
-                      <img 
-                        src={module.partnerLogo} 
-                        alt={module.partnerName} 
-                        className="h-8 object-contain"
-                      />
+                      <a 
+                        href="https://www.ecomy.com/" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="hover:opacity-80 transition-opacity"
+                      >
+                        <img 
+                          src={module.partnerLogo} 
+                          alt={module.partnerName} 
+                          className="h-8 object-contain"
+                        />
+                      </a>
                     </div>
                   )}
                   <ul className="space-y-3 mb-8">
