@@ -91,7 +91,7 @@ export default function Piattaforma() {
                         <img 
                           src={module.partnerLogo} 
                           alt={module.partnerName} 
-                          className="h-8 object-contain bg-white p-1.5 rounded-md"
+                          className="h-8 object-contain bg-white pb-1.5 rounded-md"
                         />
                       </a>
                     </div>
