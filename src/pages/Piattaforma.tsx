@@ -8,7 +8,7 @@ import moduleHappiness from "@/assets/module-happiness.png";
 import moduleSafety from "@/assets/module-safety.png";
 import moduleHealthcare from "@/assets/module-healthcare.png";
 import moduleDei from "@/assets/module-dei.png";
-import logoEcomy from "@/assets/logo-ecomy.png";
+import logoEcomy from "@/assets/logo-ecomy-new.png";
 
 const modules = [
   {
