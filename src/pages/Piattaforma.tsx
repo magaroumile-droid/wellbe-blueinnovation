@@ -8,6 +8,7 @@ import moduleHappiness from "@/assets/module-happiness.png";
 import moduleSafety from "@/assets/module-safety.png";
 import moduleHealthcare from "@/assets/module-healthcare.png";
 import moduleDei from "@/assets/module-dei.png";
+import logoEcomy from "@/assets/logo-ecomy.png";
 
 const modules = [
   {
@@ -46,6 +47,8 @@ const modules = [
     isNew: true,
     description: "Valuta le politiche e la cultura aziendale in tema di parità di genere. Supporta il percorso verso la certificazione UNI/PdR 125:2022.",
     features: ["Conformità UNI/PdR 125:2022", "Assessment cultura inclusiva", "Gap analysis parità", "Piano d'azione parità", "Monitoraggio KPI"],
+    partnerLogo: logoEcomy,
+    partnerName: "ECOMY",
   },
 ];
 
@@ -76,6 +79,16 @@ export default function Piattaforma() {
                     </div>
                   </div>
                   <p className="text-muted-foreground leading-relaxed mb-6">{module.description}</p>
+                  {module.partnerLogo && (
+                    <div className="flex items-center gap-3 mb-6 p-3 bg-muted/50 rounded-lg border border-border">
+                      <span className="text-sm text-muted-foreground">Co-progettato con</span>
+                      <img 
+                        src={module.partnerLogo} 
+                        alt={module.partnerName} 
+                        className="h-8 object-contain"
+                      />
+                    </div>
+                  )}
                   <ul className="space-y-3 mb-8">
                     {module.features.map((feature) => (
                       <li key={feature} className="flex items-center gap-3">
