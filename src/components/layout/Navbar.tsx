@@ -46,7 +46,7 @@ export function Navbar() {
 
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center gap-3">
-            <a href="https://app.blueinnovation.it/login" target="_blank" rel="noopener noreferrer">
+            <a href="https://app.wellbe.bio/" target="_blank" rel="noopener noreferrer">
               <Button variant="outline" className="font-medium px-4">
                 <LogIn className="mr-2 h-4 w-4" />
                 Login
@@ -92,7 +92,7 @@ export function Navbar() {
                   {link.name}
                 </Link>
               ))}
-              <a href="https://app.blueinnovation.it/login" target="_blank" rel="noopener noreferrer" onClick={() => setIsOpen(false)}>
+              <a href="https://app.wellbe.bio/" target="_blank" rel="noopener noreferrer" onClick={() => setIsOpen(false)}>
                 <Button variant="outline" className="w-full font-medium mb-2">
                   <LogIn className="mr-2 h-4 w-4" />
                   Login
