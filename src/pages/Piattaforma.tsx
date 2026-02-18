@@ -3,6 +3,7 @@ import { Layout } from "@/components/layout/Layout";
 import { SectionHeader } from "@/components/shared/SectionHeader";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 import moduleHappiness from "@/assets/module-happiness.png";
 import moduleSafety from "@/assets/module-safety.png";
@@ -10,57 +11,59 @@ import moduleHealthcare from "@/assets/module-healthcare.png";
 import moduleDei from "@/assets/module-dei.png";
 import logoEcomy from "@/assets/logo-ecomy-new.png";
 
-const modules = [
-  {
-    id: "happiness",
-    title: "Happiness",
-    subtitle: "Benessere e Clima Organizzativo",
-    icon: Sparkles,
-    image: moduleHappiness,
-    description: "Basato su strumenti validati di psicologia del lavoro, il modulo Happiness misura il benessere percepito e il clima organizzativo della tua azienda tramite l'indicatore BWI (Blue Wellbeing Index).",
-    features: ["Indicatore BWI proprietario", "Certificazione e badge digitale BWI", "Assessment basato su modelli scientifici", "Report dettagliati per area/team", "Benchmark di settore"],
-  },
-  {
-    id: "safety-awareness",
-    title: "Safety Awareness",
-    subtitle: "Percezione della Safety",
-    icon: Shield,
-    image: moduleSafety,
-    description: "Analizza in modo strutturato la percezione della safety da parte dei dipendenti, con l'obiettivo di rafforzare una cultura della prevenzione all'interno dell'organizzazione.",
-    features: ["Valutazione percezione safety", "Analisi comportamenti sicuri", "Cultura della prevenzione", "Conformità normativa", "Piani di miglioramento"],
-  },
-  {
-    id: "wellbe-care",
-    title: "Wellbe Care",
-    subtitle: "Assessment per il Personale Sanitario",
-    icon: Heart,
-    image: moduleHealthcare,
-    description: "Assessment dedicato alle Direzioni Sanitarie per monitorare il benessere del personale sanitario, prevenire il burnout e migliorare la qualità del lavoro.",
-    features: ["Assessment validato", "Specifico per healthcare", "Prevenzione burnout", "Monitoraggio benessere", "Performance team medici"],
-  },
-  {
-    id: "parita-genere",
-    title: "Parità di Genere",
-    subtitle: "Certificazione UNI/PdR 125:2022",
-    icon: Users,
-    image: moduleDei,
-    isNew: true,
-    description: "Valuta le politiche e la cultura aziendale in tema di parità di genere. Supporta il percorso verso la certificazione UNI/PdR 125:2022.",
-    features: ["Conformità UNI/PdR 125:2022", "Assessment cultura inclusiva", "Gap analysis parità", "Piano d'azione parità", "Monitoraggio KPI"],
-    partnerLogo: logoEcomy,
-    partnerName: "ECOMY",
-  },
-];
-
 export default function Piattaforma() {
+  const { t } = useLanguage();
+
+  const modules = [
+    {
+      id: "happiness",
+      title: "Happiness",
+      subtitle: t("platform.happiness.subtitle"),
+      icon: Sparkles,
+      image: moduleHappiness,
+      description: t("platform.happiness.desc"),
+      features: [t("platform.happiness.f1"), t("platform.happiness.f2"), t("platform.happiness.f3"), t("platform.happiness.f4"), t("platform.happiness.f5")],
+    },
+    {
+      id: "safety-awareness",
+      title: "Safety Awareness",
+      subtitle: t("platform.safety.subtitle"),
+      icon: Shield,
+      image: moduleSafety,
+      description: t("platform.safety.desc"),
+      features: [t("platform.safety.f1"), t("platform.safety.f2"), t("platform.safety.f3"), t("platform.safety.f4"), t("platform.safety.f5")],
+    },
+    {
+      id: "wellbe-care",
+      title: "Wellbe Care",
+      subtitle: t("platform.care.subtitle"),
+      icon: Heart,
+      image: moduleHealthcare,
+      description: t("platform.care.desc"),
+      features: [t("platform.care.f1"), t("platform.care.f2"), t("platform.care.f3"), t("platform.care.f4"), t("platform.care.f5")],
+    },
+    {
+      id: "parita-genere",
+      title: "Parità di Genere",
+      subtitle: t("platform.dei.subtitle"),
+      icon: Users,
+      image: moduleDei,
+      isNew: true,
+      description: t("platform.dei.desc"),
+      features: [t("platform.dei.f1"), t("platform.dei.f2"), t("platform.dei.f3"), t("platform.dei.f4"), t("platform.dei.f5")],
+      partnerLogo: logoEcomy,
+      partnerName: "ECOMY",
+    },
+  ];
+
   return (
     <Layout>
       <section className="py-20 lg:py-28 bg-background">
         <div className="container mx-auto px-4 lg:px-8">
           <SectionHeader
-            badge="La Piattaforma"
-            title="I Nostri Assessment"
-            description="Co-progettiamo moduli insieme a consulenti certificati ed esperti di dominio. Conformi agli standard nazionali e internazionali."
+            badge={t("platform.badge")}
+            title={t("platform.title")}
+            description={t("platform.description")}
           />
           <div className="space-y-16 lg:space-y-24">
             {modules.map((module, index) => (
@@ -81,18 +84,9 @@ export default function Piattaforma() {
                   <p className="text-muted-foreground leading-relaxed mb-6">{module.description}</p>
                   {module.partnerLogo && (
                     <div className="flex items-center gap-3 mb-6 p-3 bg-muted/50 rounded-lg border border-border">
-                      <span className="text-sm text-muted-foreground">Co-progettato con</span>
-                      <a 
-                        href="https://www.ecomy.com/" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="hover:opacity-80 transition-opacity"
-                      >
-                        <img 
-                          src={module.partnerLogo} 
-                          alt={module.partnerName} 
-                          className="h-8 object-contain"
-                        />
+                      <span className="text-sm text-muted-foreground">{t("platform.coDesigned")}</span>
+                      <a href="https://www.ecomy.com/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+                        <img src={module.partnerLogo} alt={module.partnerName} className="h-8 object-contain" />
                       </a>
                     </div>
                   )}
@@ -105,16 +99,12 @@ export default function Piattaforma() {
                     ))}
                   </ul>
                   <Link to="/contatti">
-                    <Button className="font-medium">Richiedi una Demo</Button>
+                    <Button className="font-medium">{t("platform.requestDemo")}</Button>
                   </Link>
                 </div>
                 <div className="flex-1 w-full">
                   <div className="rounded-2xl bg-gradient-to-br from-muted to-muted/50 border border-border overflow-hidden">
-                    <img 
-                      src={module.image} 
-                      alt={`${module.title} - ${module.subtitle}`}
-                      className="w-full h-auto object-contain"
-                    />
+                    <img src={module.image} alt={`${module.title} - ${module.subtitle}`} className="w-full h-auto object-contain" />
                   </div>
                 </div>
               </div>
