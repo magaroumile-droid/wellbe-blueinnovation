@@ -2,37 +2,25 @@ import { Layout } from "@/components/layout/Layout";
 import { SectionHeader } from "@/components/shared/SectionHeader";
 import { Target, Lightbulb, Heart, Shield, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
 import wellbeLogo from "@/assets/wellbe-logo.png";
-import teamGabriele from "@/assets/team-gabriele.png";
-import teamAriosto from "@/assets/team-ariosto.png";
-import teamLuigi from "@/assets/team-luigi.png";
-import teamAntonio from "@/assets/team-antonio.png";
-import teamUmile from "@/assets/team-umile.png";
-
-const team = [
-  { name: "Gabriele Zangara", role: "Amministratore Delegato", description: "Leadership strategica e company vision", photo: teamGabriele },
-  { name: "Ariosto Ponterio", role: "CPO", description: "Marketing e Prodotto", photo: teamAntonio },
-  { name: "Luigi Filice", role: "R&D Lead", description: "Ricerca e sviluppo", photo: teamAriosto },
-  { name: "Antonio Cosma", role: "CFO", description: "Gestione finanziaria", photo: teamLuigi },
-  { name: "Umile Magarò", role: "BDR", description: "Business Development", photo: teamUmile },
-];
-
-const values = [
-  { icon: Target, title: "Innovazione", description: "Sviluppiamo soluzioni all'avanguardia basate sulla ricerca scientifica." },
-  { icon: Lightbulb, title: "Semplicità", description: "Rendiamo accessibili strumenti complessi attraverso interfacce intuitive." },
-  { icon: Heart, title: "Benessere", description: "Il benessere delle persone è al centro di ogni nostra decisione." },
-  { icon: Shield, title: "Affidabilità", description: "Garantiamo sicurezza dei dati e conformità agli standard più elevati." },
-];
 
 export default function ChiSiamo() {
+  const { t } = useLanguage();
+
+  const values = [
+    { icon: Target, title: t("about.val1.title"), description: t("about.val1.desc") },
+    { icon: Lightbulb, title: t("about.val2.title"), description: t("about.val2.desc") },
+    { icon: Heart, title: t("about.val3.title"), description: t("about.val3.desc") },
+    { icon: Shield, title: t("about.val4.title"), description: t("about.val4.desc") },
+  ];
+
   return (
     <Layout>
       <section className="py-20 lg:py-28 hero-gradient text-primary-foreground">
         <div className="container mx-auto px-4 lg:px-8 text-center">
-          <h1 className="text-4xl lg:text-5xl font-bold mb-6">Chi Siamo</h1>
-          <p className="text-lg text-primary-foreground/80 max-w-2xl mx-auto">
-            Wellbe è la startup di Blue Innovation dedicata alla Sostenibilità Sociale d'Impresa.
-          </p>
+          <h1 className="text-4xl lg:text-5xl font-bold mb-6">{t("about.title")}</h1>
+          <p className="text-lg text-primary-foreground/80 max-w-2xl mx-auto">{t("about.subtitle")}</p>
         </div>
       </section>
 
@@ -40,17 +28,12 @@ export default function ChiSiamo() {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <SectionHeader badge="La Nostra Storia" title="Nati per trasformare il benessere organizzativo" centered={false} />
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                Wellbe nasce dall'esperienza di <strong>Blue Innovation</strong>, azienda specializzata in soluzioni digitali innovative per le imprese. 
-                La nostra missione è rendere misurabile e migliorabile la sostenibilità sociale, mettendo le persone al centro della strategia aziendale.
-              </p>
-              <p className="text-muted-foreground leading-relaxed mb-8">
-                Collaboriamo con università, consulenti certificati ed esperti di dominio per sviluppare assessment scientificamente validati e conformi agli standard internazionali.
-              </p>
+              <SectionHeader badge={t("about.storyBadge")} title={t("about.storyTitle")} centered={false} />
+              <p className="text-muted-foreground leading-relaxed mb-6" dangerouslySetInnerHTML={{ __html: t("about.storyP1") }} />
+              <p className="text-muted-foreground leading-relaxed mb-8">{t("about.storyP2")}</p>
               <a href="https://www.blueinnovation.it/" target="_blank" rel="noopener noreferrer">
                 <Button variant="outline" className="font-medium">
-                  Scopri Blue Innovation
+                  {t("about.discoverBI")}
                   <ExternalLink className="ml-2 h-4 w-4" />
                 </Button>
               </a>
@@ -64,7 +47,7 @@ export default function ChiSiamo() {
 
       <section className="py-20 lg:py-28 bg-muted/30">
         <div className="container mx-auto px-4 lg:px-8">
-          <SectionHeader badge="I Nostri Valori" title="Cosa ci guida" />
+          <SectionHeader badge={t("about.valuesBadge")} title={t("about.valuesTitle")} />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((value) => (
               <div key={value.title} className="p-6 rounded-2xl bg-card border border-border text-center hover-lift">
@@ -78,7 +61,6 @@ export default function ChiSiamo() {
           </div>
         </div>
       </section>
-
     </Layout>
   );
 }

@@ -2,53 +2,37 @@ import { CheckCircle, ArrowRight } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-
-const benefits = [
-  "Non paghi fin quando Wellbe non è live",
-  "Dati, assessment e report illimitati",
-  "Consulente dedicato per tutta la durata del contratto",
-  "Personalizzazioni illimitate sui moduli",
-  "Prezzo scalabile basato sull'effettivo utilizzo della piattaforma",
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Pricing() {
+  const { t } = useLanguage();
+
+  const benefits = [
+    t("pricing.b1"), t("pricing.b2"), t("pricing.b3"), t("pricing.b4"), t("pricing.b5"),
+  ];
+
   return (
     <Layout>
       <section className="py-20 lg:py-32 bg-background">
         <div className="container mx-auto px-4 lg:px-8">
-          {/* Hero Title */}
           <div className="max-w-4xl mx-auto text-center mb-16 lg:mb-24">
-            <h1 className="text-4xl lg:text-6xl font-bold text-foreground mb-6">
-              Il prezzo? Dipende da te.
-            </h1>
-            <p className="text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto">
-              Ogni organizzazione è unica. Per questo costruiamo insieme un piano 
-              su misura per i tuoi obiettivi di sostenibilità sociale.
-            </p>
+            <h1 className="text-4xl lg:text-6xl font-bold text-foreground mb-6">{t("pricing.title")}</h1>
+            <p className="text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto">{t("pricing.subtitle")}</p>
           </div>
 
-          {/* Value Card */}
           <div className="max-w-5xl mx-auto">
             <div className="rounded-2xl bg-muted/50 border border-border p-8 lg:p-12">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-                {/* Left Column */}
                 <div>
-                  <h2 className="text-2xl lg:text-4xl font-bold text-foreground mb-6">
-                    Investimento, non costo
-                  </h2>
-                  <p className="text-muted-foreground leading-relaxed mb-8">
-                    Misuriamo il successo in impatto reale sulle persone. 
-                    Parlaci dei tuoi obiettivi e ti mostreremo il valore concreto.
-                  </p>
+                  <h2 className="text-2xl lg:text-4xl font-bold text-foreground mb-6">{t("pricing.cardTitle")}</h2>
+                  <p className="text-muted-foreground leading-relaxed mb-8">{t("pricing.cardDesc")}</p>
                   <Link to="/contatti">
                     <Button size="lg" className="font-semibold px-8">
-                      Richiedi preventivo
+                      {t("pricing.cta")}
                       <ArrowRight className="ml-2 h-5 w-5" />
                     </Button>
                   </Link>
                 </div>
-
-                {/* Right Column - Benefits */}
                 <div className="rounded-xl bg-foreground text-background p-6 lg:p-8">
                   <ul className="space-y-4">
                     {benefits.map((benefit) => (

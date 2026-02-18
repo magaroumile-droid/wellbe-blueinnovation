@@ -1,21 +1,30 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, LogIn } from "lucide-react";
+import { Menu, X, LogIn, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import wellbeLogo from "@/assets/wellbe-logo.png";
+import { useLanguage } from "@/contexts/LanguageContext";
+import type { Language } from "@/contexts/LanguageContext";
 
-const navLinks = [
-  { name: "Home", path: "/" },
-  { name: "Piattaforma", path: "/piattaforma" },
-  { name: "Chi Siamo", path: "/chi-siamo" },
-  { name: "FAQ", path: "/faq" },
-  { name: "Pricing", path: "/pricing" },
+const navLinkKeys = [
+  { key: "nav.home", path: "/" },
+  { key: "nav.piattaforma", path: "/piattaforma" },
+  { key: "nav.chiSiamo", path: "/chi-siamo" },
+  { key: "nav.faq", path: "/faq" },
+  { key: "nav.pricing", path: "/pricing" },
+];
+
+const languages: { code: Language; label: string; flag: string }[] = [
+  { code: "it", label: "Italiano", flag: "🇮🇹" },
+  { code: "en", label: "English", flag: "🇬🇧" },
 ];
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [langOpen, setLangOpen] = useState(false);
   const location = useLocation();
+  const { language, setLanguage, t } = useLanguage();
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50">
@@ -28,7 +37,7 @@ export function Navbar() {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-8">
-            {navLinks.map((link) => (
+            {navLinkKeys.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
@@ -39,22 +48,55 @@ export function Navbar() {
                     : "text-muted-foreground"
                 )}
               >
-                {link.name}
+                {t(link.key)}
               </Link>
             ))}
           </div>
 
-          {/* CTA Buttons */}
+          {/* CTA Buttons + Language */}
           <div className="hidden lg:flex items-center gap-3">
+            {/* Language Switcher */}
+            <div className="relative">
+              <button
+                onClick={() => setLangOpen(!langOpen)}
+                className="flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-muted"
+              >
+                <Globe className="h-4 w-4" />
+                {languages.find((l) => l.code === language)?.flag}
+              </button>
+              {langOpen && (
+                <div className="absolute right-0 top-full mt-1 bg-popover border border-border rounded-lg shadow-lg z-50 min-w-[140px] py-1">
+                  {languages.map((lang) => (
+                    <button
+                      key={lang.code}
+                      onClick={() => {
+                        setLanguage(lang.code);
+                        setLangOpen(false);
+                      }}
+                      className={cn(
+                        "flex items-center gap-2 w-full px-3 py-2 text-sm hover:bg-muted transition-colors",
+                        language === lang.code
+                          ? "text-foreground font-medium"
+                          : "text-muted-foreground"
+                      )}
+                    >
+                      <span>{lang.flag}</span>
+                      <span>{lang.label}</span>
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+
             <a href="https://app.wellbe.bio/" target="_blank" rel="noopener noreferrer">
               <Button variant="outline" className="font-medium px-4">
                 <LogIn className="mr-2 h-4 w-4" />
-                Login
+                {t("nav.login")}
               </Button>
             </a>
             <Link to="/contatti">
               <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-medium px-6">
-                Prenota Demo
+                {t("nav.prenotaDemo")}
               </Button>
             </Link>
           </div>
@@ -77,7 +119,7 @@ export function Navbar() {
         {isOpen && (
           <div className="lg:hidden py-4 border-t border-border/50 animate-fade-in">
             <div className="flex flex-col gap-4">
-              {navLinks.map((link) => (
+              {navLinkKeys.map((link) => (
                 <Link
                   key={link.path}
                   to={link.path}
@@ -89,18 +131,38 @@ export function Navbar() {
                       : "text-muted-foreground hover:text-primary"
                   )}
                 >
-                  {link.name}
+                  {t(link.key)}
                 </Link>
               ))}
+
+              {/* Mobile Language Switcher */}
+              <div className="flex items-center gap-2 py-2">
+                {languages.map((lang) => (
+                  <button
+                    key={lang.code}
+                    onClick={() => setLanguage(lang.code)}
+                    className={cn(
+                      "flex items-center gap-1.5 px-3 py-1.5 text-sm rounded-md border transition-colors",
+                      language === lang.code
+                        ? "border-primary bg-primary/10 text-foreground font-medium"
+                        : "border-border text-muted-foreground hover:border-primary"
+                    )}
+                  >
+                    <span>{lang.flag}</span>
+                    <span>{lang.label}</span>
+                  </button>
+                ))}
+              </div>
+
               <a href="https://app.wellbe.bio/" target="_blank" rel="noopener noreferrer" onClick={() => setIsOpen(false)}>
                 <Button variant="outline" className="w-full font-medium mb-2">
                   <LogIn className="mr-2 h-4 w-4" />
-                  Login
+                  {t("nav.login")}
                 </Button>
               </a>
               <Link to="/contatti" onClick={() => setIsOpen(false)}>
                 <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-medium">
-                  Prenota Demo
+                  {t("nav.prenotaDemo")}
                 </Button>
               </Link>
             </div>

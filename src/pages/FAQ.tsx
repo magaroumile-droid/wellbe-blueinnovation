@@ -1,41 +1,41 @@
 import { Layout } from "@/components/layout/Layout";
-import { SectionHeader } from "@/components/shared/SectionHeader";
-import { FAQAccordion, FAQItem } from "@/components/shared/FAQAccordion";
-
-const faqCategories = [
-  { title: "Generale", items: [
-    { question: "Cos'è Wellbe e cosa offre?", answer: "Wellbe è l'unica piattaforma integrata per la Sostenibilità Sociale d'Impresa. Offriamo assessment scientifici per misurare benessere, sicurezza, DEI e molto altro." },
-    { question: "A chi si rivolge la piattaforma?", answer: "A tutte le aziende che vogliono investire nel benessere: PMI, grandi imprese, settore pubblico e sanitario." },
-    { question: "È disponibile una demo gratuita?", answer: "Sì! Puoi prenotare una demo gratuita direttamente dal nostro sito." },
-  ]},
-  { title: "Moduli & Funzionalità", items: [
-    { question: "Quali moduli sono disponibili?", answer: "Offriamo 4 moduli: Happiness, Sicurezza e Rischio, Wellbe Care e Parità di Genere (DEI)." },
-    { question: "Posso attivare solo alcuni moduli?", answer: "Assolutamente sì. La piattaforma è modulare e puoi scegliere solo i moduli di cui hai bisogno." },
-    { question: "Il modulo Parità di Genere è conforme alla UNI/PdR 125?", answer: "Sì, il modulo Parità di Genere è progettato per supportare il percorso verso la certificazione UNI/PdR 125:2022." },
-  ]},
-  { title: "Privacy & Sicurezza", items: [
-    { question: "Come vengono protetti i dati?", answer: "Utilizziamo crittografia end-to-end, server sicuri in EU e siamo pienamente conformi al GDPR." },
-    { question: "L'anonimato è garantito?", answer: "Sì, le risposte individuali sono sempre anonime. I report mostrano solo dati aggregati." },
-  ]},
-  { title: "Pricing", items: [
-    { question: "Come funziona il pricing?", answer: "Ogni organizzazione è unica. Costruiamo insieme un piano su misura per i tuoi obiettivi di sostenibilità sociale." },
-    { question: "È possibile personalizzare il piano?", answer: "Sì, offriamo soluzioni completamente personalizzate in base alle tue esigenze e al numero di dipendenti." },
-  ]},
-  { title: "Implementazione", items: [
-    { question: "Quanto tempo richiede l'attivazione?", answer: "In media meno di una settimana, con supporto dedicato del nostro team." },
-    { question: "Offrite formazione?", answer: "Sì, tutti i piani includono onboarding e formazione per il team HR." },
-  ]},
-];
+import { FAQAccordion } from "@/components/shared/FAQAccordion";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function FAQ() {
+  const { t } = useLanguage();
+
+  const faqCategories = [
+    { title: t("faqPage.cat1"), items: [
+      { question: t("faqPage.g1q"), answer: t("faqPage.g1a") },
+      { question: t("faqPage.g2q"), answer: t("faqPage.g2a") },
+      { question: t("faqPage.g3q"), answer: t("faqPage.g3a") },
+    ]},
+    { title: t("faqPage.cat2"), items: [
+      { question: t("faqPage.m1q"), answer: t("faqPage.m1a") },
+      { question: t("faqPage.m2q"), answer: t("faqPage.m2a") },
+      { question: t("faqPage.m3q"), answer: t("faqPage.m3a") },
+    ]},
+    { title: t("faqPage.cat3"), items: [
+      { question: t("faqPage.p1q"), answer: t("faqPage.p1a") },
+      { question: t("faqPage.p2q"), answer: t("faqPage.p2a") },
+    ]},
+    { title: t("faqPage.cat4"), items: [
+      { question: t("faqPage.pr1q"), answer: t("faqPage.pr1a") },
+      { question: t("faqPage.pr2q"), answer: t("faqPage.pr2a") },
+    ]},
+    { title: t("faqPage.cat5"), items: [
+      { question: t("faqPage.i1q"), answer: t("faqPage.i1a") },
+      { question: t("faqPage.i2q"), answer: t("faqPage.i2a") },
+    ]},
+  ];
+
   return (
     <Layout>
       <section className="py-20 lg:py-28 hero-gradient text-primary-foreground">
         <div className="container mx-auto px-4 lg:px-8 text-center">
-          <h1 className="text-4xl lg:text-5xl font-bold mb-6">Domande Frequenti</h1>
-          <p className="text-lg text-primary-foreground/80 max-w-2xl mx-auto">
-            Trova le risposte a tutte le tue domande sulla piattaforma Wellbe.
-          </p>
+          <h1 className="text-4xl lg:text-5xl font-bold mb-6">{t("faqPage.title")}</h1>
+          <p className="text-lg text-primary-foreground/80 max-w-2xl mx-auto">{t("faqPage.subtitle")}</p>
         </div>
       </section>
 
