@@ -1,4 +1,4 @@
-import { Sparkles, Shield, Heart, Users, CheckCircle } from "lucide-react";
+import { Sparkles, Shield, Heart, Users, CheckCircle, Star } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { SectionHeader } from "@/components/shared/SectionHeader";
 import { Button } from "@/components/ui/button";
@@ -53,6 +53,16 @@ export default function Piattaforma() {
       features: [t("platform.dei.f1"), t("platform.dei.f2"), t("platform.dei.f3"), t("platform.dei.f4"), t("platform.dei.f5")],
       partnerLogo: logoEcomy,
       partnerName: "ECOMY",
+    },
+    {
+      id: "vibewise",
+      title: "Wellbe VibeWise",
+      subtitle: t("platform.vibewise.subtitle"),
+      icon: Star,
+      image: moduleHappiness,
+      isNew: true,
+      description: t("platform.vibewise.desc"),
+      features: [t("platform.vibewise.f1"), t("platform.vibewise.f2"), t("platform.vibewise.f3"), t("platform.vibewise.f4"), t("platform.vibewise.f5")],
     },
   ];
 
