@@ -8,6 +8,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import type { Language } from "@/contexts/LanguageContext";
 
 const navLinkKeys = [
+  { key: "nav.home", path: "/" },
   { key: "nav.piattaforma", path: "/piattaforma" },
   { key: "nav.chiSiamo", path: "/chi-siamo" },
   { key: "nav.pricing", path: "/pricing" },
