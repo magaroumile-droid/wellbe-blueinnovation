@@ -5,25 +5,12 @@ import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { cn } from "@/lib/utils";
 import wellbeLogo from "@/assets/wellbe-logo.png";
-import teamAntonio from "@/assets/team-antonio.png";
-import teamAriosto from "@/assets/team-ariosto.png";
-import teamGabriele from "@/assets/team-gabriele.png";
-import teamLuigi from "@/assets/team-luigi.png";
-import teamUmile from "@/assets/team-umile.png";
 
 const valueColors = [
   { icon: "bg-blue-500/10 text-blue-600", border: "border-blue-200/50" },
   { icon: "bg-amber-500/10 text-amber-600", border: "border-amber-200/50" },
   { icon: "bg-emerald-500/10 text-emerald-600", border: "border-emerald-200/50" },
   { icon: "bg-violet-500/10 text-violet-600", border: "border-violet-200/50" },
-];
-
-const team = [
-  { name: "Antonio", img: teamAntonio },
-  { name: "Ariosto", img: teamAriosto },
-  { name: "Gabriele", img: teamGabriele },
-  { name: "Luigi", img: teamLuigi },
-  { name: "Umile", img: teamUmile },
 ];
 
 export default function ChiSiamo() {
@@ -116,32 +103,6 @@ export default function ChiSiamo() {
                 </div>
               );
             })}
-          </div>
-        </div>
-      </section>
-
-      {/* ── TEAM ── */}
-      <section className="py-20 lg:py-28 bg-background">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="max-w-2xl mb-12">
-            <span className="section-badge mb-5">Team</span>
-            <h2 className="text-3xl lg:text-4xl font-extrabold text-foreground mt-3 leading-tight">
-              Le persone dietro Wellbe
-            </h2>
-          </div>
-          <div className="flex flex-wrap gap-8">
-            {team.map((member, index) => (
-              <div
-                key={member.name}
-                className="flex flex-col items-center gap-3 animate-fade-in-up"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-border shadow-md hover-lift">
-                  <img src={member.img} alt={member.name} className="w-full h-full object-cover" />
-                </div>
-                <span className="text-sm font-semibold text-foreground">{member.name}</span>
-              </div>
-            ))}
           </div>
         </div>
       </section>
