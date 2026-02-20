@@ -14,16 +14,15 @@ import moduleVibewise from "@/assets/module-vibewise.png";
 import logoEcomy from "@/assets/logo-ecomy-new.png";
 
 const moduleColors = {
-  happiness: { bg: "from-blue-600 to-indigo-700", light: "bg-blue-50", icon: "bg-blue-500/15 text-blue-600", border: "border-blue-200", accent: "text-blue-600", dot: "bg-blue-500", cardHover: "hover:border-blue-300 hover:shadow-blue-100" },
-  safety:    { bg: "from-orange-500 to-amber-600", light: "bg-orange-50", icon: "bg-orange-500/15 text-orange-600", border: "border-orange-200", accent: "text-orange-600", dot: "bg-orange-500", cardHover: "hover:border-orange-300 hover:shadow-orange-100" },
-  care:      { bg: "from-pink-500 to-rose-600", light: "bg-pink-50", icon: "bg-pink-500/15 text-pink-600", border: "border-pink-200", accent: "text-pink-600", dot: "bg-pink-500", cardHover: "hover:border-pink-300 hover:shadow-pink-100" },
-  vibewise:  { bg: "from-violet-600 to-purple-700", light: "bg-violet-50", icon: "bg-violet-500/15 text-violet-600", border: "border-violet-200", accent: "text-violet-600", dot: "bg-violet-500", cardHover: "hover:border-violet-300 hover:shadow-violet-100" },
-  dei:       { bg: "from-emerald-500 to-teal-600", light: "bg-emerald-50", icon: "bg-emerald-500/15 text-emerald-600", border: "border-emerald-200", accent: "text-emerald-600", dot: "bg-emerald-500", cardHover: "hover:border-emerald-300 hover:shadow-emerald-100" },
+  happiness: { bg: "from-blue-600 to-indigo-700", shadow: "shadow-blue-500/20", light: "bg-blue-50", icon: "bg-blue-500/15 text-blue-600", border: "border-blue-200", accent: "text-blue-600", dot: "bg-blue-500", ring: "ring-blue-500" },
+  safety:    { bg: "from-orange-500 to-amber-600", shadow: "shadow-orange-500/20", light: "bg-orange-50", icon: "bg-orange-500/15 text-orange-600", border: "border-orange-200", accent: "text-orange-600", dot: "bg-orange-500", ring: "ring-orange-500" },
+  care:      { bg: "from-pink-500 to-rose-600", shadow: "shadow-pink-500/20", light: "bg-pink-50", icon: "bg-pink-500/15 text-pink-600", border: "border-pink-200", accent: "text-pink-600", dot: "bg-pink-500", ring: "ring-pink-500" },
+  vibewise:  { bg: "from-violet-600 to-purple-700", shadow: "shadow-violet-500/20", light: "bg-violet-50", icon: "bg-violet-500/15 text-violet-600", border: "border-violet-200", accent: "text-violet-600", dot: "bg-violet-500", ring: "ring-violet-500" },
+  dei:       { bg: "from-emerald-500 to-teal-600", shadow: "shadow-emerald-500/20", light: "bg-emerald-50", icon: "bg-emerald-500/15 text-emerald-600", border: "border-emerald-200", accent: "text-emerald-600", dot: "bg-emerald-500", ring: "ring-emerald-500" },
 };
 
 export default function Piattaforma() {
   const { t } = useLanguage();
-  // null = all modules grid view, number = detail view
   const [activeModule, setActiveModule] = useState<number | null>(null);
 
   const modules = [
@@ -70,90 +69,52 @@ export default function Piattaforma() {
 
   return (
     <Layout>
-      {/* ── HERO ── */}
-      <section className="pt-8 pb-0 bg-background">
-        <div className="container mx-auto px-4 lg:px-6">
-          <div className="hero-dark-card px-8 lg:px-16 py-14 lg:py-20 relative overflow-hidden">
-            <div className="absolute top-0 left-1/3 w-80 h-80 rounded-full blur-3xl opacity-15" style={{ background: "hsl(203 82% 55%)" }} />
+
+      {/* ── HERO + MODULES combined ── */}
+      <section className="pt-8 pb-16 bg-background">
+        <div className="container mx-auto px-4 lg:px-8">
+
+          {/* Dark hero card */}
+          <div className="hero-dark-card px-8 lg:px-16 py-14 lg:py-20 relative overflow-hidden mb-12">
+            <div className="absolute top-0 left-1/3 w-96 h-96 rounded-full blur-3xl opacity-20" style={{ background: "hsl(203 82% 55%)" }} />
+            <div className="absolute bottom-0 right-1/4 w-64 h-64 rounded-full blur-3xl opacity-10" style={{ background: "hsl(280 75% 60%)" }} />
             <div className="relative z-10 max-w-3xl mx-auto text-center">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/20 bg-white/10 text-white/80 text-xs font-semibold uppercase tracking-widest mb-8">
                 <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
                 {t("platform.badge")}
               </div>
-              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-extrabold text-white mb-6 leading-tight">
+              <h1 className="text-4xl lg:text-6xl font-extrabold text-white mb-6 leading-[1.1] tracking-tight">
                 {t("platform.title")}
               </h1>
-              <p className="text-white/70 text-lg max-w-2xl mx-auto">
+              <p className="text-white/60 text-base lg:text-lg max-w-xl mx-auto leading-relaxed">
                 {t("platform.description")}
               </p>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* ── MODULES SECTION ── */}
-      <section className="py-16 bg-background">
-        <div className="container mx-auto px-4 lg:px-8">
-
-          {/* ── ALL MODULES — Arke grid style ── */}
+          {/* ── ALL MODULES — full-bleed card grid ── */}
           {activeModule === null && (
             <div className="animate-fade-in">
-              <div className="flex flex-col lg:flex-row lg:gap-16 items-start">
-                {/* Left: heading */}
-                <div className="lg:w-64 flex-shrink-0 mb-10 lg:mb-0 lg:pt-2">
-                  <h2 className="text-3xl lg:text-4xl font-extrabold text-foreground leading-tight">
+              {/* Section heading */}
+              <div className="flex items-end justify-between mb-8">
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-2">5 Assessment</p>
+                  <h2 className="text-2xl lg:text-3xl font-extrabold text-foreground">
                     Quale area vuoi misurare?
                   </h2>
                 </div>
+              </div>
 
-                {/* Right: cards grid */}
-                <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {modules.map((module, index) => {
-                    const mc = moduleColors[module.colorKey];
-                    return (
-                      <button
-                        key={module.id}
-                        onClick={() => setActiveModule(index)}
-                        className={cn(
-                          "group text-left rounded-2xl border bg-card overflow-hidden transition-all duration-300 shadow-sm",
-                          "hover:-translate-y-2 hover:shadow-xl border-border",
-                          mc.cardHover
-                        )}
-                      >
-                        {/* Screenshot thumbnail with gradient overlay */}
-                        <div className={cn("relative h-48 overflow-hidden bg-gradient-to-br", mc.bg)}>
-                          <img
-                            src={module.image}
-                            alt={module.title}
-                            className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                          />
-                          {/* Dark overlay on hover */}
-                          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
-                          {module.isNew && (
-                            <span className="absolute top-3 right-3 px-2 py-0.5 text-[10px] font-bold bg-accent text-white rounded-full uppercase shadow-md">NEW</span>
-                          )}
-                          {/* Icon pill bottom-left */}
-                          <div className="absolute bottom-3 left-3">
-                            <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/90 backdrop-blur-sm shadow-sm">
-                              <module.icon className={cn("h-3.5 w-3.5", mc.accent)} />
-                              <span className={cn("text-[10px] font-bold uppercase tracking-wide", mc.accent)}>{module.title}</span>
-                            </div>
-                          </div>
-                        </div>
-
-                        {/* Card body */}
-                        <div className="p-5">
-                          <p className="text-muted-foreground text-xs leading-relaxed line-clamp-2 mb-3">
-                            {module.subtitle}
-                          </p>
-                          <div className={cn("flex items-center gap-1 text-xs font-semibold transition-all duration-200 translate-x-0 group-hover:translate-x-1", mc.accent)}>
-                            Scopri di più <ArrowRight className="h-3 w-3" />
-                          </div>
-                        </div>
-                      </button>
-                    );
-                  })}
-                </div>
+              {/* Grid: 3 top + 2 bottom */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
+                {modules.slice(0, 3).map((module, index) => (
+                  <ModuleCard key={module.id} module={module} onClick={() => setActiveModule(index)} />
+                ))}
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:grid-cols-2 lg:w-2/3 mx-auto">
+                {modules.slice(3).map((module, index) => (
+                  <ModuleCard key={module.id} module={module} onClick={() => setActiveModule(index + 3)} wide />
+                ))}
               </div>
             </div>
           )}
@@ -161,17 +122,16 @@ export default function Piattaforma() {
           {/* ── SINGLE MODULE detail view ── */}
           {activeModule !== null && active && colors && (
             <div className="animate-fade-in">
-              {/* Back button */}
-              <button
-                onClick={() => setActiveModule(null)}
-                className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors mb-8"
-              >
-                <ChevronLeft className="h-4 w-4" />
-                Tutti i moduli
-              </button>
-
-              {/* Tab strip */}
-              <div className="flex flex-wrap gap-2 mb-8">
+              {/* Back + tabs row */}
+              <div className="flex flex-wrap items-center gap-3 mb-8">
+                <button
+                  onClick={() => setActiveModule(null)}
+                  className="flex items-center gap-1.5 text-sm font-semibold text-muted-foreground hover:text-foreground transition-colors mr-2"
+                >
+                  <ChevronLeft className="h-4 w-4" />
+                  Tutti
+                </button>
+                <div className="w-px h-5 bg-border" />
                 {modules.map((m, i) => {
                   const mc = moduleColors[m.colorKey];
                   const isActive = i === activeModule;
@@ -182,7 +142,7 @@ export default function Piattaforma() {
                       className={cn(
                         "flex items-center gap-2 px-4 py-2 rounded-full border text-sm font-semibold transition-all duration-200 whitespace-nowrap",
                         isActive
-                          ? cn("border-2", mc.border, mc.accent, mc.light)
+                          ? cn("border-2 ring-2 ring-offset-1", mc.border, mc.accent, mc.light, mc.ring)
                           : "border-border text-muted-foreground bg-card hover:bg-muted"
                       )}
                     >
@@ -197,9 +157,9 @@ export default function Piattaforma() {
               </div>
 
               {/* Detail panel */}
-              <div className={cn("rounded-3xl border overflow-hidden", colors.border)}>
+              <div className={cn("rounded-3xl border overflow-hidden shadow-2xl", colors.border, colors.shadow)}>
                 <div className="flex flex-col lg:flex-row min-h-[520px]">
-                  {/* Text */}
+                  {/* Text side */}
                   <div className="lg:w-[42%] p-8 lg:p-14 flex flex-col justify-center bg-card">
                     <div className="flex items-center gap-3 mb-6">
                       <div className={cn("w-11 h-11 rounded-2xl flex items-center justify-center", colors.icon)}>
@@ -210,7 +170,7 @@ export default function Piattaforma() {
                       )}
                     </div>
                     <h2 className="text-3xl lg:text-4xl font-extrabold text-foreground mb-2 leading-tight">{active.title}</h2>
-                    <p className={cn("font-semibold mb-5 text-xs uppercase tracking-widest", colors.accent)}>{active.subtitle}</p>
+                    <p className={cn("font-bold mb-5 text-xs uppercase tracking-widest", colors.accent)}>{active.subtitle}</p>
                     <p className="text-muted-foreground leading-relaxed mb-7 text-sm">{active.description}</p>
                     {active.partnerLogo && (
                       <div className="flex items-center gap-3 mb-6 p-3 bg-muted rounded-xl border border-border w-fit">
@@ -220,7 +180,7 @@ export default function Piattaforma() {
                         </a>
                       </div>
                     )}
-                    <ul className="space-y-2 mb-8">
+                    <ul className="space-y-2.5 mb-8">
                       {active.features.map((feature) => (
                         <li key={feature} className="flex items-start gap-2">
                           <CheckCircle className={cn("h-4 w-4 flex-shrink-0 mt-0.5", colors.accent)} />
@@ -236,18 +196,20 @@ export default function Piattaforma() {
                     </Link>
                   </div>
 
-                  {/* Screenshot */}
-                  <div className={cn("lg:w-[58%] flex items-center justify-center p-8 lg:p-12 bg-gradient-to-br", colors.bg)}>
-                    <div className="relative w-full max-w-xl">
-                      <div className="absolute inset-0 rounded-3xl blur-2xl opacity-30 bg-white/40 scale-95" />
-                      <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/30">
+                  {/* Image side */}
+                  <div className={cn("lg:w-[58%] relative flex items-center justify-center p-8 lg:p-12 bg-gradient-to-br overflow-hidden", colors.bg)}>
+                    {/* Decorative circles */}
+                    <div className="absolute -top-16 -right-16 w-64 h-64 rounded-full bg-white/5" />
+                    <div className="absolute -bottom-8 -left-8 w-48 h-48 rounded-full bg-black/10" />
+                    <div className="relative w-full max-w-xl z-10">
+                      <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/20">
                         <img src={active.image} alt={active.title} className="w-full h-auto object-contain" />
                       </div>
                     </div>
                   </div>
                 </div>
 
-                {/* Bottom nav */}
+                {/* Bottom pagination */}
                 <div className={cn("flex items-center justify-between px-8 lg:px-14 py-4 border-t", colors.border, colors.light)}>
                   <button
                     onClick={() => setActiveModule((prev) => ((prev ?? 0) - 1 + modules.length) % modules.length)}
@@ -302,3 +264,71 @@ export default function Piattaforma() {
     </Layout>
   );
 }
+
+/* ── Module Card component ── */
+function ModuleCard({
+  module,
+  onClick,
+  wide = false,
+}: {
+  module: ReturnType<typeof buildModule>;
+  onClick: () => void;
+  wide?: boolean;
+}) {
+  const mc = moduleColors[module.colorKey];
+  return (
+    <button
+      onClick={onClick}
+      className={cn(
+        "group relative rounded-2xl overflow-hidden text-left transition-all duration-300",
+        "shadow-lg hover:shadow-2xl hover:-translate-y-1.5",
+        wide ? "h-52" : "h-64"
+      )}
+    >
+      {/* Full-bleed gradient background */}
+      <div className={cn("absolute inset-0 bg-gradient-to-br", mc.bg)} />
+
+      {/* Screenshot image — right-side peek */}
+      <div className="absolute right-0 bottom-0 top-0 w-3/5 overflow-hidden">
+        <img
+          src={module.image}
+          alt={module.title}
+          className="w-full h-full object-cover object-left-top opacity-80 group-hover:scale-105 transition-transform duration-500"
+        />
+        {/* Left-side gradient fade */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-transparent" />
+      </div>
+
+      {/* Subtle dark overlay on hover */}
+      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 z-10" />
+
+      {/* Content overlay */}
+      <div className="absolute inset-0 z-20 p-6 flex flex-col justify-between">
+        {/* Top: badges */}
+        <div className="flex items-start justify-between">
+          <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/15 backdrop-blur-sm border border-white/20">
+            <module.icon className="h-3.5 w-3.5 text-white" />
+            <span className="text-[10px] font-bold uppercase tracking-widest text-white">{module.title}</span>
+          </div>
+          {module.isNew && (
+            <span className="px-2 py-0.5 text-[10px] font-bold bg-accent text-white rounded-full uppercase shadow-md">NEW</span>
+          )}
+        </div>
+
+        {/* Bottom: title + arrow */}
+        <div>
+          <p className="text-white/80 text-xs font-medium mb-1 leading-snug">{module.subtitle}</p>
+          <div className="flex items-center justify-between">
+            <span className="text-white font-extrabold text-base leading-tight">Scopri →</span>
+            <div className="w-8 h-8 rounded-full bg-white/15 backdrop-blur-sm border border-white/20 flex items-center justify-center group-hover:bg-white/25 transition-colors">
+              <ArrowRight className="h-4 w-4 text-white" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </button>
+  );
+}
+
+// Helper type inference
+function buildModule(m: object) { return m as any; }
