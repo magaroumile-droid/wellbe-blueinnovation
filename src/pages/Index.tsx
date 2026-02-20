@@ -195,9 +195,9 @@ export default function Index() {
         </div>
         <LogoMarquee
           logos={[
-            { src: logoFluentis, alt: "Fluentis" },
             { src: logoProfiltek, alt: "Profiltek" },
             { src: logoWish, alt: "Wish Innovation" },
+            { src: logoFluentis, alt: "Fluentis" },
             { src: logoArtigiani, alt: "Gli Artigiani del Riposo" },
             { src: logoBeautyprof, alt: "Beautyprof" },
             { src: logoMsc, alt: "Medical Sport Center" },
