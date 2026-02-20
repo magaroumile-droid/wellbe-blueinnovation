@@ -9,6 +9,7 @@ import moduleHappiness from "@/assets/module-happiness.png";
 import moduleSafety from "@/assets/module-safety.png";
 import moduleHealthcare from "@/assets/module-healthcare.png";
 import moduleDei from "@/assets/module-dei.png";
+import moduleVibewise from "@/assets/module-vibewise.png";
 import logoEcomy from "@/assets/logo-ecomy-new.png";
 
 const moduleColors = {
@@ -59,7 +60,7 @@ export default function Piattaforma() {
       title: "Wellbe VibeWise",
       subtitle: t("platform.vibewise.subtitle"),
       icon: Star,
-      image: moduleHappiness,
+      image: moduleVibewise,
       isNew: true,
       description: t("platform.vibewise.desc"),
       features: [t("platform.vibewise.f1"), t("platform.vibewise.f2"), t("platform.vibewise.f3"), t("platform.vibewise.f4"), t("platform.vibewise.f5")],
