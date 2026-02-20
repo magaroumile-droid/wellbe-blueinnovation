@@ -12,10 +12,10 @@ import teamLuigi from "@/assets/team-luigi.png";
 import teamUmile from "@/assets/team-umile.png";
 
 const valueColors = [
-  { bg: "from-blue-500/10 to-indigo-500/10", border: "border-blue-200/60", icon: "bg-blue-500/10 text-blue-600" },
-  { bg: "from-amber-500/10 to-yellow-500/10", border: "border-amber-200/60", icon: "bg-amber-500/10 text-amber-600" },
-  { bg: "from-emerald-500/10 to-teal-500/10", border: "border-emerald-200/60", icon: "bg-emerald-500/10 text-emerald-600" },
-  { bg: "from-violet-500/10 to-purple-500/10", border: "border-violet-200/60", icon: "bg-violet-500/10 text-violet-600" },
+  { icon: "bg-blue-500/10 text-blue-600", border: "border-blue-200/50" },
+  { icon: "bg-amber-500/10 text-amber-600", border: "border-amber-200/50" },
+  { icon: "bg-emerald-500/10 text-emerald-600", border: "border-emerald-200/50" },
+  { icon: "bg-violet-500/10 text-violet-600", border: "border-violet-200/50" },
 ];
 
 const team = [
@@ -38,88 +38,80 @@ export default function ChiSiamo() {
 
   return (
     <Layout>
-      {/* Hero */}
-      <section className="relative py-20 lg:py-28 hero-gradient text-primary-foreground overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-1/4 -left-1/4 w-1/2 h-1/2 bg-primary/20 rounded-full blur-3xl animate-pulse-slow" />
-          <div className="absolute bottom-1/4 -right-1/4 w-1/2 h-1/2 bg-accent/20 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: "1s" }} />
-        </div>
-        <div className="container mx-auto px-4 lg:px-8 relative z-10 text-center">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-primary-foreground/15 border border-primary-foreground/20 text-sm font-medium mb-6 backdrop-blur-sm">
-            {t("about.storyBadge")}
-          </span>
-          <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 max-w-3xl mx-auto">
-            {t("about.title")}
-          </h1>
-          <p className="text-lg lg:text-xl text-primary-foreground/80 max-w-2xl mx-auto">
-            {t("about.subtitle")}
-          </p>
+      {/* ── HERO ── */}
+      <section className="pt-8 pb-0 bg-background">
+        <div className="container mx-auto px-4 lg:px-6">
+          <div className="hero-dark-card px-8 lg:px-16 py-16 lg:py-24 relative overflow-hidden">
+            <div className="absolute top-0 right-1/3 w-80 h-80 rounded-full blur-3xl opacity-15" style={{ background: "hsl(203 82% 55%)" }} />
+            <div className="relative z-10 max-w-3xl mx-auto text-center">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/20 bg-white/10 text-white/80 text-xs font-semibold uppercase tracking-widest mb-8">
+                <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+                {t("about.storyBadge")}
+              </div>
+              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-extrabold text-white mb-6 leading-tight">
+                {t("about.title")}
+              </h1>
+              <p className="text-white/70 text-lg max-w-2xl mx-auto">
+                {t("about.subtitle")}
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Storia */}
+      {/* ── STORIA ── */}
       <section className="py-20 lg:py-28 bg-background">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div className="animate-fade-in-up">
-              <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-5">
-                {t("about.storyBadge")}
-              </span>
-              <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6">
+              <span className="section-badge mb-5">{t("about.storyBadge")}</span>
+              <h2 className="text-3xl lg:text-4xl font-extrabold text-foreground mb-6 mt-3 leading-tight">
                 {t("about.storyTitle")}
               </h2>
-              <p
-                className="text-muted-foreground leading-relaxed mb-5 text-base"
-                dangerouslySetInnerHTML={{ __html: t("about.storyP1") }}
-              />
+              <p className="text-muted-foreground leading-relaxed mb-5 text-base"
+                dangerouslySetInnerHTML={{ __html: t("about.storyP1") }} />
               <p className="text-muted-foreground leading-relaxed mb-8 text-base">
                 {t("about.storyP2")}
               </p>
               <a href="https://www.blueinnovation.it/" target="_blank" rel="noopener noreferrer">
-                <Button variant="outline" className="font-medium group">
+                <Button variant="outline" className="font-semibold rounded-xl group">
                   {t("about.discoverBI")}
                   <ExternalLink className="ml-2 h-4 w-4" />
                 </Button>
               </a>
             </div>
-            <div className="animate-fade-in-up" style={{ animationDelay: "0.15s" }}>
-              <div className="relative rounded-3xl bg-gradient-to-br from-primary/5 to-accent/10 border border-border p-12 flex items-center justify-center aspect-square">
-                <div className="absolute inset-0 rounded-3xl overflow-hidden">
-                  <div className="absolute top-1/4 -right-1/4 w-1/2 h-1/2 bg-accent/10 rounded-full blur-3xl" />
-                  <div className="absolute bottom-1/4 -left-1/4 w-1/2 h-1/2 bg-primary/10 rounded-full blur-3xl" />
-                </div>
-                <img src={wellbeLogo} alt="Wellbe" className="max-w-[70%] max-h-[70%] object-contain relative z-10" />
+            <div className="animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
+              <div className="relative rounded-3xl bg-muted border border-border p-12 flex items-center justify-center aspect-square overflow-hidden">
+                <div className="absolute top-0 right-0 w-48 h-48 rounded-full blur-3xl opacity-20" style={{ background: "hsl(203 82% 55%)" }} />
+                <img src={wellbeLogo} alt="Wellbe" className="max-w-[60%] object-contain relative z-10" />
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Valori */}
-      <section className="py-20 lg:py-28 bg-muted/30">
+      {/* ── VALORI ── */}
+      <section className="py-20 lg:py-28 bg-muted/50 border-y border-border">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center mb-12 lg:mb-16">
-            <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-              {t("about.valuesBadge")}
-            </span>
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">{t("about.valuesTitle")}</h2>
+          <div className="max-w-2xl mb-12">
+            <span className="section-badge mb-5">{t("about.valuesBadge")}</span>
+            <h2 className="text-3xl lg:text-4xl font-extrabold text-foreground mt-3 leading-tight">
+              {t("about.valuesTitle")}
+            </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {values.map((value, index) => {
               const colors = valueColors[index];
               return (
                 <div
                   key={value.title}
-                  className={cn(
-                    "rounded-2xl border p-7 bg-gradient-to-br hover-lift animate-fade-in-up text-center",
-                    colors.bg, colors.border
-                  )}
-                  style={{ animationDelay: `${index * 0.1}s` }}
+                  className={cn("rounded-2xl border bg-card p-7 hover-lift animate-fade-in-up", colors.border)}
+                  style={{ animationDelay: `${index * 0.08}s` }}
                 >
-                  <div className={cn("w-14 h-14 rounded-xl flex items-center justify-center mx-auto mb-5", colors.icon)}>
-                    <value.icon className="h-7 w-7" />
+                  <div className={cn("w-12 h-12 rounded-xl flex items-center justify-center mb-5", colors.icon)}>
+                    <value.icon className="h-6 w-6" />
                   </div>
-                  <h3 className="text-lg font-semibold text-foreground mb-2">{value.title}</h3>
+                  <h3 className="text-base font-bold text-foreground mb-2">{value.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{value.description}</p>
                 </div>
               );
@@ -128,49 +120,50 @@ export default function ChiSiamo() {
         </div>
       </section>
 
-      {/* Team */}
+      {/* ── TEAM ── */}
       <section className="py-20 lg:py-28 bg-background">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center mb-12 lg:mb-16">
-            <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-              Team
-            </span>
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+          <div className="max-w-2xl mb-12">
+            <span className="section-badge mb-5">Team</span>
+            <h2 className="text-3xl lg:text-4xl font-extrabold text-foreground mt-3 leading-tight">
               Le persone dietro Wellbe
             </h2>
           </div>
-          <div className="flex flex-wrap justify-center gap-8">
+          <div className="flex flex-wrap gap-8">
             {team.map((member, index) => (
               <div
                 key={member.name}
                 className="flex flex-col items-center gap-3 animate-fade-in-up"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-border shadow-lg hover-lift">
+                <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-border shadow-md hover-lift">
                   <img src={member.img} alt={member.name} className="w-full h-full object-cover" />
                 </div>
-                <span className="text-sm font-medium text-foreground">{member.name}</span>
+                <span className="text-sm font-semibold text-foreground">{member.name}</span>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20 lg:py-28 hero-gradient text-primary-foreground relative overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-1/4 -left-1/4 w-1/2 h-1/2 bg-primary/20 rounded-full blur-3xl animate-pulse-slow" />
-          <div className="absolute bottom-1/4 -right-1/4 w-1/2 h-1/2 bg-accent/20 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: "1s" }} />
-        </div>
-        <div className="container mx-auto px-4 lg:px-8 relative z-10 text-center max-w-3xl mx-auto">
-          <h2 className="text-3xl lg:text-5xl font-bold mb-6">{t("cta.title")}</h2>
-          <p className="text-lg text-primary-foreground/80 mb-10">{t("cta.subtitle")}</p>
-          <Link to="/contatti">
-            <Button size="lg" className="bg-primary-foreground text-foreground hover:bg-primary-foreground/90 font-semibold px-10">
-              {t("cta.button")}
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-          </Link>
+      {/* ── CTA ── */}
+      <section className="py-8 bg-background">
+        <div className="container mx-auto px-4 lg:px-6">
+          <div className="hero-dark-card px-10 lg:px-20 py-20 text-center relative overflow-hidden">
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+              <div className="w-[500px] h-[500px] rounded-full blur-3xl opacity-15" style={{ background: "hsl(203 82% 55%)" }} />
+            </div>
+            <div className="relative z-10 max-w-2xl mx-auto">
+              <h2 className="text-3xl lg:text-5xl font-extrabold text-white mb-6 leading-tight">{t("cta.title")}</h2>
+              <p className="text-white/70 text-lg mb-10">{t("cta.subtitle")}</p>
+              <Link to="/contatti">
+                <Button size="lg" className="bg-white text-foreground hover:bg-white/90 font-bold px-10 rounded-xl text-base">
+                  {t("cta.button")}
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
     </Layout>
