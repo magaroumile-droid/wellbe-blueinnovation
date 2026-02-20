@@ -1,21 +1,9 @@
-import { CheckCircle, ArrowRight, Sparkles, MessageCircle, BarChart3 } from "lucide-react";
+import { CheckCircle, ArrowRight } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { cn } from "@/lib/utils";
 
-const highlightColors = [
-  { bg: "from-blue-500/10 to-indigo-500/10", border: "border-blue-200/60", icon: "bg-blue-500/10 text-blue-600" },
-  { bg: "from-emerald-500/10 to-teal-500/10", border: "border-emerald-200/60", icon: "bg-emerald-500/10 text-emerald-600" },
-  { bg: "from-violet-500/10 to-purple-500/10", border: "border-violet-200/60", icon: "bg-violet-500/10 text-violet-600" },
-];
-
-const highlights = [
-  { icon: Sparkles, titleKey: "pricing.h1.title", descKey: "pricing.h1.desc" },
-  { icon: BarChart3, titleKey: "pricing.h2.title", descKey: "pricing.h2.desc" },
-  { icon: MessageCircle, titleKey: "pricing.h3.title", descKey: "pricing.h3.desc" },
-];
 
 export default function Pricing() {
   const { t } = useLanguage();
@@ -45,37 +33,6 @@ export default function Pricing() {
         </div>
       </section>
 
-      {/* Highlights */}
-      <section className="py-16 bg-background">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl mx-auto">
-            {highlights.map((h, index) => {
-              const colors = highlightColors[index];
-              const titleKey = h.titleKey as any;
-              const descKey = h.descKey as any;
-              // Fallback titles in case keys aren't in context yet
-              const titles = ["Su misura per te", "Impatto misurabile", "Supporto dedicato"];
-              const descs = ["Nessun piano fisso. Costruiamo insieme la soluzione giusta per la tua organizzazione.", "Misuri il ROI reale sulle persone, non solo i costi.", "Un consulente dedicato ti accompagna per tutta la durata del contratto."];
-              return (
-                <div
-                  key={index}
-                  className={cn(
-                    "rounded-2xl border p-7 bg-gradient-to-br hover-lift animate-fade-in-up",
-                    colors.bg, colors.border
-                  )}
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  <div className={cn("w-12 h-12 rounded-xl flex items-center justify-center mb-5", colors.icon)}>
-                    <h.icon className="h-6 w-6" />
-                  </div>
-                  <h3 className="text-lg font-semibold text-foreground mb-2">{titles[index]}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{descs[index]}</p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
 
       {/* Main Card */}
       <section className="py-12 pb-20 lg:pb-28 bg-background">

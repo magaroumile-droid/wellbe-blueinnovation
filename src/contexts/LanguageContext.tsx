@@ -37,7 +37,9 @@ const translations: Record<Language, Record<string, string>> = {
     "modules.happiness.desc": "Misura il clima organizzativo e il benessere con l'indicatore BWI e ottieni la certificazione digitale.",
     "modules.safety.desc": "Analizza la percezione della safety per rafforzare una cultura della prevenzione in azienda.",
     "modules.care.desc": "Assessment dedicato al personale sanitario per monitorare il benessere e prevenire il burnout.",
+    "modules.dei.title": "Sistema di Gestione sulla Parità di Genere",
     "modules.dei.desc": "Costruisci un ambiente inclusivo e ottieni la certificazione UNI/PdR 125:2022 per la parità di genere.",
+    "modules.vibewise.desc": "Assessment scientificamente validato per le persone meno giovani: misura benessere, risorse personali e qualità della vita nell'ottica della silver economy.",
     "modules.exploreAll": "Esplora tutti i moduli",
 
     // Benefits
@@ -235,7 +237,9 @@ const translations: Record<Language, Record<string, string>> = {
     "modules.happiness.desc": "Measure organizational climate and wellbeing with the BWI indicator and get the digital certification.",
     "modules.safety.desc": "Analyze safety perception to strengthen a prevention culture in the company.",
     "modules.care.desc": "Assessment dedicated to healthcare staff to monitor wellbeing and prevent burnout.",
+    "modules.dei.title": "Gender Equality Management System",
     "modules.dei.desc": "Build an inclusive environment and get the UNI/PdR 125:2022 certification for gender equality.",
+    "modules.vibewise.desc": "Scientifically validated assessment for older adults: measures wellbeing, personal resources and quality of life within the silver economy framework.",
     "modules.exploreAll": "Explore all modules",
 
     // Benefits

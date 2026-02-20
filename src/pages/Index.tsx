@@ -36,7 +36,7 @@ export default function Index() {
     { title: "Happiness", description: t("modules.happiness.desc"), icon: Sparkles, colorKey: "blue" as const },
     { title: "Safety Awareness", description: t("modules.safety.desc"), icon: Shield, colorKey: "orange" as const },
     { title: "Wellbe Care", description: t("modules.care.desc"), icon: Heart, colorKey: "pink" as const },
-    { title: "Wellbe VibeWise", description: t("modules.dei.desc"), icon: Star, colorKey: "violet" as const, isNew: true },
+    { title: "Wellbe VibeWise", description: t("modules.vibewise.desc"), icon: Star, colorKey: "violet" as const, isNew: true },
     { title: t("modules.dei.title"), description: t("modules.dei.desc"), icon: Users, colorKey: "green" as const, isNew: true },
   ];
 
