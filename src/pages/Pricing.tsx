@@ -34,6 +34,32 @@ export default function Pricing() {
         </div>
       </section>
 
+      {/* ── "Together" highlight ── */}
+      <section className="pt-12 pb-0 bg-background">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="max-w-5xl mx-auto">
+            <div className="rounded-3xl border border-accent/30 bg-gradient-to-br from-accent/5 to-primary/5 p-10 lg:p-14 text-center">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-accent/30 bg-accent/10 text-accent text-xs font-bold uppercase tracking-widest mb-6">
+                <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+                Il nostro approccio
+              </div>
+              <h2 className="text-3xl lg:text-5xl font-extrabold text-foreground mb-4 leading-tight">
+                Il prezzo lo <span className="gradient-text">decidiamo insieme.</span>
+              </h2>
+              <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-8 leading-relaxed">
+                Non esistono listini fissi. Ogni organizzazione è unica: ascoltiamo i tuoi obiettivi di Responsabilità Sociale e costruiamo un piano su misura che porta valore reale, non solo numeri.
+              </p>
+              <Link to="/contatti">
+                <Button size="lg" className="font-bold px-10 rounded-xl group">
+                  Parliamone insieme
+                  <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── MAIN CARD ── */}
       <section className="py-12 bg-background">
         <div className="container mx-auto px-4 lg:px-8">
