@@ -20,11 +20,23 @@ import logoTodsystem from "@/assets/logo-todsystem.jpg";
 import logoFluentis from "@/assets/logo-fluentis.png";
 
 const moduleColors = {
-  blue:   { bg: "from-blue-500/10 to-indigo-500/10", icon: "bg-blue-500/10 text-blue-600", border: "border-blue-200/60" },
-  orange: { bg: "from-orange-500/10 to-amber-500/10", icon: "bg-orange-500/10 text-orange-600", border: "border-orange-200/60" },
-  pink:   { bg: "from-pink-500/10 to-rose-500/10", icon: "bg-pink-500/10 text-pink-600", border: "border-pink-200/60" },
-  violet: { bg: "from-violet-500/10 to-purple-500/10", icon: "bg-violet-500/10 text-violet-600", border: "border-violet-200/60" },
-  green:  { bg: "from-emerald-500/10 to-teal-500/10", icon: "bg-emerald-500/10 text-emerald-600", border: "border-emerald-200/60" },
+  blue: { bg: "from-blue-500/10 to-indigo-500/10", icon: "bg-blue-500/10 text-blue-600", border: "border-blue-200/60" },
+  orange: {
+    bg: "from-orange-500/10 to-amber-500/10",
+    icon: "bg-orange-500/10 text-orange-600",
+    border: "border-orange-200/60",
+  },
+  pink: { bg: "from-pink-500/10 to-rose-500/10", icon: "bg-pink-500/10 text-pink-600", border: "border-pink-200/60" },
+  violet: {
+    bg: "from-violet-500/10 to-purple-500/10",
+    icon: "bg-violet-500/10 text-violet-600",
+    border: "border-violet-200/60",
+  },
+  green: {
+    bg: "from-emerald-500/10 to-teal-500/10",
+    icon: "bg-emerald-500/10 text-emerald-600",
+    border: "border-emerald-200/60",
+  },
 };
 
 export default function Index() {
@@ -36,8 +48,20 @@ export default function Index() {
     { title: "Happiness", description: t("modules.happiness.desc"), icon: Sparkles, colorKey: "blue" as const },
     { title: "Safety Awareness", description: t("modules.safety.desc"), icon: Shield, colorKey: "orange" as const },
     { title: "Wellbe Care", description: t("modules.care.desc"), icon: Heart, colorKey: "pink" as const },
-    { title: "Wellbe VibeWise", description: t("modules.vibewise.desc"), icon: Star, colorKey: "violet" as const, isNew: true },
-    { title: t("modules.dei.title"), description: t("modules.dei.desc"), icon: Users, colorKey: "green" as const, isNew: true },
+    {
+      title: "Wellbe VibeWise",
+      description: t("modules.vibewise.desc"),
+      icon: Star,
+      colorKey: "violet" as const,
+      isNew: true,
+    },
+    {
+      title: t("modules.dei.title"),
+      description: t("modules.dei.desc"),
+      icon: Users,
+      colorKey: "green" as const,
+      isNew: true,
+    },
   ];
 
   const benefits = [
@@ -49,19 +73,25 @@ export default function Index() {
   const testimonials = [
     {
       quote: t("testimonials.1.quote"),
-      author: "Giovanni", role: "CEO", company: "Profiltek",
+      author: "Giovanni",
+      role: "CEO",
+      company: "Profiltek",
       metric: { value: "+43%", label: t("testimonials.1.metric") },
       logo: logoProfiltek,
     },
     {
       quote: t("testimonials.2.quote"),
-      author: "Sara", role: "Technical Director", company: "Wish",
+      author: "Sara",
+      role: "Technical Director",
+      company: "Wish",
       metric: { value: "+52%", label: t("testimonials.2.metric") },
       logo: logoWish,
     },
     {
       quote: t("testimonials.3.quote"),
-      author: "Vincenzo", role: "CEO", company: "Gli Artigiani del Riposo",
+      author: "Vincenzo",
+      role: "CEO",
+      company: "Gli Artigiani del Riposo",
       metric: { value: "+46%", label: t("testimonials.3.metric") },
       logo: logoArtigiani,
     },
@@ -78,7 +108,7 @@ export default function Index() {
   return (
     <Layout>
       {/* ── HERO ── */}
-      <section ref={parallaxRef} className="pt-8 pb-0 bg-background">
+      <section ref={parallaxRef} className="pt-8 pb-0 bg-background #ffffff">
         <div className="container mx-auto px-4 lg:px-6">
           {/* Dark card like JetHR */}
           <div
@@ -106,21 +136,25 @@ export default function Index() {
                   {t("platform.badge")}
                 </div>
                 <h1 className="text-4xl lg:text-5xl xl:text-6xl font-extrabold text-white leading-[1.1] mb-6">
-                  {t("hero.title1")}{" "}
-                  <span className="text-accent">{t("hero.titleHighlight")}</span>
+                  {t("hero.title1")} <span className="text-accent">{t("hero.titleHighlight")}</span>
                 </h1>
-                <p className="text-white/70 text-lg leading-relaxed mb-10 max-w-lg">
-                  {t("hero.subtitle")}
-                </p>
+                <p className="text-white/70 text-lg leading-relaxed mb-10 max-w-lg">{t("hero.subtitle")}</p>
                 <div className="flex flex-col sm:flex-row gap-3">
                   <Link to="/contatti">
-                    <Button size="lg" className="bg-white text-foreground hover:bg-white/90 font-bold px-8 rounded-xl text-base">
+                    <Button
+                      size="lg"
+                      className="bg-white text-foreground hover:bg-white/90 font-bold px-8 rounded-xl text-base"
+                    >
                       {t("hero.cta1")}
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
                   </Link>
                   <Link to="/piattaforma">
-                    <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 font-semibold px-8 rounded-xl text-base bg-transparent">
+                    <Button
+                      size="lg"
+                      variant="outline"
+                      className="border-white/30 text-white hover:bg-white/10 font-semibold px-8 rounded-xl text-base bg-transparent"
+                    >
                       {t("hero.cta2")}
                     </Button>
                   </Link>
@@ -159,17 +193,19 @@ export default function Index() {
             {t("hero.logoSection")}
           </p>
         </div>
-        <LogoMarquee logos={[
-          { src: logoProfiltek, alt: "Profiltek" },
-          { src: logoWish, alt: "Wish Innovation" },
-          { src: logoArtigiani, alt: "Gli Artigiani del Riposo" },
-          { src: logoBeautyprof, alt: "Beautyprof" },
-          { src: logoMsc, alt: "Medical Sport Center" },
-          { src: logoCadis, alt: "Cadis" },
-          { src: logoSynedrio, alt: "Synedrio Coworking" },
-          { src: logoTodsystem, alt: "Tod System" },
-          { src: logoFluentis, alt: "Fluentis" },
-        ]} />
+        <LogoMarquee
+          logos={[
+            { src: logoProfiltek, alt: "Profiltek" },
+            { src: logoWish, alt: "Wish Innovation" },
+            { src: logoArtigiani, alt: "Gli Artigiani del Riposo" },
+            { src: logoBeautyprof, alt: "Beautyprof" },
+            { src: logoMsc, alt: "Medical Sport Center" },
+            { src: logoCadis, alt: "Cadis" },
+            { src: logoSynedrio, alt: "Synedrio Coworking" },
+            { src: logoTodsystem, alt: "Tod System" },
+            { src: logoFluentis, alt: "Fluentis" },
+          ]}
+        />
       </section>
 
       {/* ── MODULES ── */}
@@ -191,16 +227,28 @@ export default function Index() {
                   key={module.title}
                   className={cn(
                     "group relative rounded-2xl border p-7 bg-card hover-lift cursor-pointer overflow-hidden animate-fade-in-up",
-                    colors.border
+                    colors.border,
                   )}
                   style={{ animationDelay: `${index * 0.08}s` }}
                 >
-                  <div className={cn("absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl", colors.bg)} />
+                  <div
+                    className={cn(
+                      "absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl",
+                      colors.bg,
+                    )}
+                  />
                   <div className="relative z-10">
                     {module.isNew && (
-                      <span className="absolute -top-1 right-0 px-2.5 py-0.5 text-xs font-bold bg-accent text-white rounded-full">NEW</span>
+                      <span className="absolute -top-1 right-0 px-2.5 py-0.5 text-xs font-bold bg-accent text-white rounded-full">
+                        NEW
+                      </span>
                     )}
-                    <div className={cn("w-11 h-11 rounded-xl flex items-center justify-center mb-5 transition-transform group-hover:scale-110", colors.icon)}>
+                    <div
+                      className={cn(
+                        "w-11 h-11 rounded-xl flex items-center justify-center mb-5 transition-transform group-hover:scale-110",
+                        colors.icon,
+                      )}
+                    >
                       <module.icon className="h-5 w-5" />
                     </div>
                     <h3 className="text-base font-bold text-foreground mb-2">{module.title}</h3>
@@ -272,11 +320,17 @@ export default function Index() {
                 <p className="text-foreground text-sm leading-relaxed mb-6">"{testimonial.quote}"</p>
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-muted border border-border flex items-center justify-center p-1.5">
-                    <img src={testimonial.logo} alt={testimonial.company} className="max-w-full max-h-full object-contain" />
+                    <img
+                      src={testimonial.logo}
+                      alt={testimonial.company}
+                      className="max-w-full max-h-full object-contain"
+                    />
                   </div>
                   <div>
                     <p className="font-bold text-foreground text-sm">{testimonial.author}</p>
-                    <p className="text-xs text-muted-foreground">{testimonial.role} @ {testimonial.company}</p>
+                    <p className="text-xs text-muted-foreground">
+                      {testimonial.role} @ {testimonial.company}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -314,15 +368,19 @@ export default function Index() {
         <div className="container mx-auto px-4 lg:px-6">
           <div className="hero-dark-card px-10 lg:px-20 py-20 text-center relative overflow-hidden">
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <div className="w-[500px] h-[500px] rounded-full blur-3xl opacity-15" style={{ background: "hsl(203 82% 55%)" }} />
+              <div
+                className="w-[500px] h-[500px] rounded-full blur-3xl opacity-15"
+                style={{ background: "hsl(203 82% 55%)" }}
+              />
             </div>
             <div className="relative z-10 max-w-2xl mx-auto">
-              <h2 className="text-3xl lg:text-5xl font-extrabold text-white mb-6 leading-tight">
-                {t("cta.title")}
-              </h2>
+              <h2 className="text-3xl lg:text-5xl font-extrabold text-white mb-6 leading-tight">{t("cta.title")}</h2>
               <p className="text-white/70 text-lg mb-10">{t("cta.subtitle")}</p>
               <Link to="/contatti">
-                <Button size="lg" className="bg-white text-foreground hover:bg-white/90 font-bold px-10 rounded-xl text-base">
+                <Button
+                  size="lg"
+                  className="bg-white text-foreground hover:bg-white/90 font-bold px-10 rounded-xl text-base"
+                >
                   {t("cta.button")}
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
