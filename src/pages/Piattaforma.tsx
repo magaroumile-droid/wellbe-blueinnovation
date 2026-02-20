@@ -100,17 +100,14 @@ export default function Piattaforma() {
             <div className="animate-fade-in">
               <div className="flex flex-col lg:flex-row lg:gap-16 items-start">
                 {/* Left: heading */}
-                <div className="lg:w-72 flex-shrink-0 mb-10 lg:mb-0 lg:pt-2">
+                <div className="lg:w-64 flex-shrink-0 mb-10 lg:mb-0 lg:pt-2">
                   <h2 className="text-3xl lg:text-4xl font-extrabold text-foreground leading-tight">
                     Quale area vuoi misurare?
                   </h2>
-                  <p className="text-muted-foreground mt-4 text-sm leading-relaxed">
-                    Cinque assessment scientificamente validati per la Responsabilità Sociale d'Impresa.
-                  </p>
                 </div>
 
                 {/* Right: cards grid */}
-                <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                   {modules.map((module, index) => {
                     const mc = moduleColors[module.colorKey];
                     return (
@@ -118,35 +115,38 @@ export default function Piattaforma() {
                         key={module.id}
                         onClick={() => setActiveModule(index)}
                         className={cn(
-                          "group text-left rounded-2xl border bg-card overflow-hidden transition-all duration-200 shadow-sm hover:-translate-y-1",
-                          "border-border hover:shadow-lg",
+                          "group text-left rounded-2xl border bg-card overflow-hidden transition-all duration-300 shadow-sm",
+                          "hover:-translate-y-2 hover:shadow-xl border-border",
                           mc.cardHover
                         )}
                       >
-                        {/* Screenshot thumbnail */}
-                        <div className={cn("relative h-44 overflow-hidden bg-gradient-to-br", mc.bg)}>
+                        {/* Screenshot thumbnail with gradient overlay */}
+                        <div className={cn("relative h-48 overflow-hidden bg-gradient-to-br", mc.bg)}>
                           <img
                             src={module.image}
                             alt={module.title}
-                            className="w-full h-full object-cover object-top scale-110 group-hover:scale-105 transition-transform duration-300"
+                            className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                           />
+                          {/* Dark overlay on hover */}
+                          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
                           {module.isNew && (
-                            <span className="absolute top-3 right-3 px-2 py-0.5 text-[10px] font-bold bg-accent text-white rounded-full uppercase">NEW</span>
+                            <span className="absolute top-3 right-3 px-2 py-0.5 text-[10px] font-bold bg-accent text-white rounded-full uppercase shadow-md">NEW</span>
                           )}
+                          {/* Icon pill bottom-left */}
+                          <div className="absolute bottom-3 left-3">
+                            <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/90 backdrop-blur-sm shadow-sm">
+                              <module.icon className={cn("h-3.5 w-3.5", mc.accent)} />
+                              <span className={cn("text-[10px] font-bold uppercase tracking-wide", mc.accent)}>{module.title}</span>
+                            </div>
+                          </div>
                         </div>
 
                         {/* Card body */}
                         <div className="p-5">
-                          <div className={cn("w-8 h-8 rounded-lg flex items-center justify-center mb-3", mc.icon)}>
-                            <module.icon className="h-4 w-4" />
-                          </div>
-                          <h3 className="font-extrabold text-foreground text-base leading-snug mb-1">
-                            {module.title}
-                          </h3>
-                          <p className="text-muted-foreground text-xs leading-relaxed line-clamp-2">
+                          <p className="text-muted-foreground text-xs leading-relaxed line-clamp-2 mb-3">
                             {module.subtitle}
                           </p>
-                          <div className={cn("flex items-center gap-1 mt-3 text-xs font-semibold transition-opacity opacity-0 group-hover:opacity-100", mc.accent)}>
+                          <div className={cn("flex items-center gap-1 text-xs font-semibold transition-all duration-200 translate-x-0 group-hover:translate-x-1", mc.accent)}>
                             Scopri di più <ArrowRight className="h-3 w-3" />
                           </div>
                         </div>
