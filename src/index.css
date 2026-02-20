@@ -6,22 +6,22 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 220 40% 18%;
+    --background: 220 20% 97%;
+    --foreground: 220 40% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 40% 18%;
+    --card-foreground: 220 40% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 40% 18%;
+    --popover-foreground: 220 40% 12%;
 
     --primary: 220 40% 18%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96%;
+    --secondary: 220 20% 94%;
     --secondary-foreground: 220 40% 18%;
 
-    --muted: 210 40% 96%;
+    --muted: 220 15% 93%;
     --muted-foreground: 215 16% 47%;
 
     --accent: 203 82% 45%;
@@ -30,8 +30,8 @@
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
+    --border: 220 15% 88%;
+    --input: 220 15% 88%;
     --ring: 203 82% 45%;
 
     --radius: 0.75rem;
@@ -45,15 +45,18 @@
     --wellbe-orange: 25 95% 53%;
     --wellbe-pink: 340 82% 60%;
 
+    /* Hero dark card like JetHR */
+    --hero-card: 220 35% 14%;
+
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(220 40% 18%) 0%, hsl(220 45% 25%) 50%, hsl(220 40% 15%) 100%);
-    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(210 40% 98%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(220 40% 14%) 0%, hsl(220 45% 20%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(220 20% 98%) 100%);
     --gradient-accent: linear-gradient(135deg, hsl(220 40% 18%) 0%, hsl(203 82% 45%) 100%);
 
     /* Shadows */
-    --shadow-card: 0 4px 20px -4px hsl(220 40% 18% / 0.1);
-    --shadow-card-hover: 0 20px 40px -8px hsl(220 40% 18% / 0.15);
-    --shadow-glow: 0 0 60px hsl(203 82% 45% / 0.3);
+    --shadow-card: 0 4px 20px -4px hsl(220 40% 18% / 0.08);
+    --shadow-card-hover: 0 20px 40px -8px hsl(220 40% 18% / 0.14);
+    --shadow-glow: 0 0 60px hsl(203 82% 45% / 0.25);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5% 26%;
@@ -94,8 +97,7 @@
     --input: 220 33% 17%;
     --ring: 203 82% 45%;
 
-    /* Dark mode gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(220 40% 4%) 0%, hsl(220 45% 15%) 50%, hsl(220 40% 6%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(220 40% 4%) 0%, hsl(220 45% 15%) 100%);
     --gradient-card: linear-gradient(180deg, hsl(220 40% 10%) 0%, hsl(220 40% 8%) 100%);
 
     --sidebar-background: 220 40% 8%;
@@ -137,6 +139,12 @@
     background: var(--gradient-hero);
   }
 
+  /* JetHR style dark hero card */
+  .hero-dark-card {
+    background: hsl(var(--hero-card));
+    @apply rounded-[2rem] text-white overflow-hidden;
+  }
+
   .card-gradient {
     background: var(--gradient-card);
   }
@@ -152,6 +160,11 @@
   .hover-lift:hover {
     @apply -translate-y-1;
     box-shadow: var(--shadow-card-hover);
+  }
+
+  /* JetHR style section badge pill */
+  .section-badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full border border-border bg-card text-xs font-semibold uppercase tracking-widest text-muted-foreground;
   }
 }
 
