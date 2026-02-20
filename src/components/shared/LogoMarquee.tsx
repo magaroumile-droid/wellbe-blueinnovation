@@ -3,17 +3,18 @@ import { cn } from "@/lib/utils";
 interface LogoMarqueeProps {
   logos: { src: string; alt: string }[];
   className?: string;
+  bgColor?: "background" | "white";
 }
 
-export function LogoMarquee({ logos, className }: LogoMarqueeProps) {
-  // Duplicate logos for seamless loop
+export function LogoMarquee({ logos, className, bgColor = "background" }: LogoMarqueeProps) {
   const duplicatedLogos = [...logos, ...logos];
+  const gradientFrom = bgColor === "white" ? "from-white" : "from-background";
 
   return (
     <div className={cn("relative overflow-hidden", className)}>
       {/* Gradient overlays */}
-      <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-background to-transparent z-10" />
-      <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-background to-transparent z-10" />
+      <div className={cn("absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r to-transparent z-10", gradientFrom)} />
+      <div className={cn("absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l to-transparent z-10", gradientFrom)} />
       
       {/* Marquee container */}
       <div className="flex animate-marquee">

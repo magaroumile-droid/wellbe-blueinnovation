@@ -187,7 +187,7 @@ export default function Index() {
       </section>
 
       {/* ── CLIENT LOGOS ── */}
-      <section className="py-12 bg-background border-b border-border">
+      <section className="py-12 bg-white border-b border-border">
         <div className="container mx-auto px-4 lg:px-8 mb-8">
           <p className="text-center text-xs text-muted-foreground font-semibold uppercase tracking-widest">
             {t("hero.logoSection")}
@@ -195,6 +195,7 @@ export default function Index() {
         </div>
         <LogoMarquee
           logos={[
+            { src: logoFluentis, alt: "Fluentis" },
             { src: logoProfiltek, alt: "Profiltek" },
             { src: logoWish, alt: "Wish Innovation" },
             { src: logoArtigiani, alt: "Gli Artigiani del Riposo" },
@@ -203,8 +204,8 @@ export default function Index() {
             { src: logoCadis, alt: "Cadis" },
             { src: logoSynedrio, alt: "Synedrio Coworking" },
             { src: logoTodsystem, alt: "Tod System" },
-            { src: logoFluentis, alt: "Fluentis" },
           ]}
+          bgColor="white"
         />
       </section>
 
