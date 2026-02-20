@@ -13,29 +13,8 @@ export default function Pricing() {
 
   return (
     <Layout>
-      {/* ── HERO ── */}
-      <section className="pt-8 pb-0 bg-background">
-        <div className="container mx-auto px-4 lg:px-6">
-          <div className="hero-dark-card px-8 lg:px-16 py-16 lg:py-24 relative overflow-hidden">
-            <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full blur-3xl opacity-15" style={{ background: "hsl(203 82% 55%)" }} />
-            <div className="relative z-10 max-w-3xl mx-auto text-center">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/20 bg-white/10 text-white/80 text-xs font-semibold uppercase tracking-widest mb-8">
-                <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-                Pricing
-              </div>
-              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-extrabold text-white mb-6 leading-tight">
-                {t("pricing.title")}
-              </h1>
-              <p className="text-white/70 text-lg max-w-2xl mx-auto">
-                {t("pricing.subtitle")}
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ── "Together" highlight ── */}
-      <section className="pt-12 pb-0 bg-background">
+      <section className="pt-8 pb-0 bg-background">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-5xl mx-auto">
             <div className="rounded-3xl border border-accent/30 bg-gradient-to-br from-accent/5 to-primary/5 p-10 lg:p-14 text-center">
