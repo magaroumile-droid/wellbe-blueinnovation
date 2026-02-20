@@ -11,6 +11,7 @@ export function Footer() {
       { name: "Happiness", hash: "happiness" },
       { name: "Safety Awareness", hash: "safety-awareness" },
       { name: "Wellbe Care", hash: "wellbe-care" },
+      { name: "Wellbe VibeWise", hash: "vibewise" },
       { name: "Parità di Genere", hash: "parita-genere" },
     ],
     azienda: [
